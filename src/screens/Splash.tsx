@@ -19,7 +19,7 @@ export default function SplashScreen() {
         >
             <SvgXml
                 xml={uuundulateShape}
-                style={{ position: "absolute", top: 0, opacity: 0.15 }}
+                style={{ position: "absolute", top: 0, opacity: 0.2 }}
             />
             <View
                 style={{
