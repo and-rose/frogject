@@ -37,7 +37,7 @@ const IndeterminateSplash = (props: any) => {
                 }}
                 variant={"headlineLarge"}
             >
-                Leaper
+                RE:GROUP
                 <MaterialCommunityIcons
                     name="debug-step-over"
                     size={35}

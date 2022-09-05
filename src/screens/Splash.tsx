@@ -2,7 +2,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import React from "react";
 import { View } from "react-native";
 import { MD2Colors, Text, useTheme } from "react-native-paper";
-import Svg, { SvgXml } from "react-native-svg";
+import { SvgXml } from "react-native-svg";
 import uuundulateShape from "../constants/svgShapes";
 
 export default function SplashScreen() {
@@ -38,7 +38,7 @@ export default function SplashScreen() {
                     }}
                     variant={"headlineLarge"}
                 >
-                    Leaper
+                    RE:GROUP
                     <MaterialCommunityIcons
                         name="debug-step-over"
                         size={35}
