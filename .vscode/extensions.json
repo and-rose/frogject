@@ -1,0 +1,10 @@
+{
+    "recommendations": [
+        "formulahendry.auto-rename-tag",
+        "dbaeumer.vscode-eslint",
+        "bycedric.vscode-expo",
+        "eamodio.gitlens",
+        "esbenp.prettier-vscode",
+        "rbbit.typescript-hero"
+    ]
+}
