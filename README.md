@@ -25,3 +25,5 @@ $ yarn start
 ```
 
 This will open the Expo CLI and present a QR Code in the terminal. You will need the [Expo Go](https://expo.dev/client) mobile app to access the application you are hosting. This page will hot-refresh as you make changes to the code base and output errors to your terminal. Happy prototyping!
+
+
