@@ -1,13 +1,12 @@
-import { Roboto_400Regular, useFonts } from "@expo-google-fonts/roboto";
-import React from "react";
-import { StyleSheet } from "react-native";
-import { Provider as PaperProvider } from "react-native-paper";
+import { Roboto_400Regular, useFonts } from '@expo-google-fonts/roboto';
+import React from 'react';
+import { Provider as PaperProvider } from 'react-native-paper';
 
-import LeaperTheme from "./src/constants/theme";
-import Navigation from "./src/navigation/Navigation";
+import LeaperTheme from './src/constants/theme';
+import Navigation from './src/navigation/Navigation';
 
 export default function App() {
-    let [fontsLoaded] = useFonts({
+    const [fontsLoaded] = useFonts({
         Roboto_400Regular,
     });
 
@@ -21,12 +20,3 @@ export default function App() {
         );
     }
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: "#fff",
-        alignItems: "center",
-        justifyContent: "center",
-    },
-});

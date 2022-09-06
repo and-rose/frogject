@@ -1,18 +1,14 @@
-import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
-import React from "react";
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+import React from 'react';
 
-import SplashScreen from "../screens/Splash";
+import SplashScreen from '../screens/Splash';
 
 const Tab = createMaterialBottomTabNavigator();
 
 export const BottomTabs = () => {
     return (
-        <Tab.Navigator
-            initialRouteName="Home"
-            shifting={true}
-            barStyle={{ backgroundColor: "#fff" }}
-        >
+        <Tab.Navigator initialRouteName="Home" shifting barStyle={{ backgroundColor: '#fff' }}>
             <Tab.Screen
                 name="Recruit"
                 component={SplashScreen}
@@ -20,11 +16,7 @@ export const BottomTabs = () => {
                     tabBarIcon: ({ focused, color }) => {
                         return (
                             <MaterialCommunityIcons
-                                name={
-                                    focused
-                                        ? "account-search"
-                                        : "account-search-outline"
-                                }
+                                name={focused ? 'account-search' : 'account-search-outline'}
                                 color={color}
                                 size={25}
                             />
@@ -39,11 +31,7 @@ export const BottomTabs = () => {
                     tabBarIcon: ({ focused, color }) => {
                         return (
                             <MaterialCommunityIcons
-                                name={
-                                    focused
-                                        ? "gamepad-variant"
-                                        : "gamepad-variant-outline"
-                                }
+                                name={focused ? 'gamepad-variant' : 'gamepad-variant-outline'}
                                 color={color}
                                 size={25}
                             />
@@ -58,7 +46,7 @@ export const BottomTabs = () => {
                     tabBarIcon: ({ focused, color }) => {
                         return (
                             <MaterialCommunityIcons
-                                name={focused ? "chat" : "chat-outline"}
+                                name={focused ? 'chat' : 'chat-outline'}
                                 color={color}
                                 size={25}
                             />
@@ -74,11 +62,7 @@ export const BottomTabs = () => {
                     tabBarIcon: ({ focused, color }) => {
                         return (
                             <MaterialCommunityIcons
-                                name={
-                                    focused
-                                        ? "account-circle"
-                                        : "account-circle-outline"
-                                }
+                                name={focused ? 'account-circle' : 'account-circle-outline'}
                                 color={color}
                                 size={25}
                             />

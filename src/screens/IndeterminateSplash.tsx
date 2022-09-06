@@ -1,7 +1,7 @@
-import { MaterialCommunityIcons } from "@expo/vector-icons";
-import React, { useEffect, useState } from "react";
-import { View } from "react-native";
-import { ProgressBar, Text, useTheme } from "react-native-paper";
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import React, { useEffect, useState } from 'react';
+import { View } from 'react-native';
+import { ProgressBar, Text, useTheme } from 'react-native-paper';
 
 const IndeterminateSplash = (props: any) => {
     const [appIsReady, setAppIsReady] = useState(false);
@@ -15,28 +15,26 @@ const IndeterminateSplash = (props: any) => {
 
     useEffect(() => {
         if (appIsReady) {
-            props.navigation.replace("Leaper");
+            props.navigation.replace('Leaper');
         }
     }, [appIsReady, props.navigation]);
 
     return (
         <View
             style={{
-                display: "flex",
+                display: 'flex',
                 flex: 1,
-                justifyContent: "space-around",
-                alignItems: "center",
-            }}
-        >
+                justifyContent: 'space-around',
+                alignItems: 'center',
+            }}>
             <Text
                 style={{
                     color: theme.colors.primary,
-                    textTransform: "uppercase",
-                    fontFamily: "Roboto_400Regular",
+                    textTransform: 'uppercase',
+                    fontFamily: 'Roboto_400Regular',
                     letterSpacing: 1.5,
                 }}
-                variant={"headlineLarge"}
-            >
+                variant={'headlineLarge'}>
                 RE:GROUP
                 <MaterialCommunityIcons
                     name="debug-step-over"
@@ -44,11 +42,7 @@ const IndeterminateSplash = (props: any) => {
                     color={theme.colors.primary}
                 />
             </Text>
-            <ProgressBar
-                indeterminate
-                style={{ width: 250 }}
-                color={theme.colors.primary}
-            />
+            <ProgressBar indeterminate style={{ width: 250 }} color={theme.colors.primary} />
         </View>
     );
 };

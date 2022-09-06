@@ -1,18 +1,12 @@
-import {
-    getFocusedRouteNameFromRoute,
-    NavigationContainer,
-} from "@react-navigation/native";
-import {
-    createStackNavigator,
-    TransitionPresets,
-} from "@react-navigation/stack";
-import React from "react";
-import { IconButton } from "react-native-paper";
+import { getFocusedRouteNameFromRoute, NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator, TransitionPresets } from '@react-navigation/stack';
+import React from 'react';
+import { IconButton } from 'react-native-paper';
 
-import LeaperTheme from "../constants/theme";
-import IndeterminateSplash from "../screens/IndeterminateSplash";
-import Splash from "../screens/Splash";
-import BottomTabs from "./BottomTabs";
+import LeaperTheme from '../constants/theme';
+import IndeterminateSplash from '../screens/IndeterminateSplash';
+import Splash from '../screens/Splash';
+import BottomTabs from './BottomTabs';
 
 export type RootStackParamList = {
     Leaper: undefined;
@@ -26,7 +20,7 @@ function getHeaderTitle(route: any) {
     // If the focused route is not found, we need to assume it's the initial screen
     // This can happen during if there hasn't been any navigation inside the screen
 
-    return getFocusedRouteNameFromRoute(route) ?? "Foodspace";
+    return getFocusedRouteNameFromRoute(route) ?? 'Foodspace';
 }
 
 export default function Navigation() {
@@ -44,7 +38,7 @@ export default function Navigation() {
                             <IconButton
                                 icon="cog"
                                 size={20}
-                                onPress={() => navigation.navigate("Settings")}
+                                onPress={() => navigation.navigate('Settings')}
                             />
                         ),
                     })}
@@ -69,7 +63,7 @@ export default function Navigation() {
                     name="CheckIn"
                     component={Splash}
                     options={{
-                        title: "Check In",
+                        title: 'Check In',
                         ...TransitionPresets.SlideFromRightIOS,
                     }}
                 />
@@ -77,7 +71,7 @@ export default function Navigation() {
                     name="Settings"
                     component={Splash}
                     options={{
-                        title: "Settings",
+                        title: 'Settings',
                         ...TransitionPresets.SlideFromRightIOS,
                     }}
                 />
