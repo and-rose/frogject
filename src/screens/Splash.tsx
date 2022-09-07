@@ -17,7 +17,7 @@ export default function SplashScreen() {
                 justifyContent: 'space-around',
                 alignItems: 'center',
             }}>
-            <SvgXml xml={uuundulateShape} style={{ position: 'absolute', top: 0, opacity: 0.2 }} />
+            {/* <SvgXml xml={uuundulateShape} style={{ position: 'absolute', top: 0, opacity: 0.2 }} /> */}
             <View
                 style={{
                     backgroundColor: theme.colors.background,
