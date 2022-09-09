@@ -15,7 +15,7 @@ const IndeterminateSplash = (props: any) => {
 
     useEffect(() => {
         if (appIsReady) {
-            props.navigation.replace('Leaper');
+            props.navigation.replace('REGROUP');
         }
     }, [appIsReady, props.navigation]);
 

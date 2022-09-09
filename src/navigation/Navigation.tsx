@@ -9,7 +9,7 @@ import Splash from '../screens/Splash';
 import BottomTabs from './BottomTabs';
 
 export type RootStackParamList = {
-    Leaper: undefined;
+    REGROUP: undefined;
     CheckIn: undefined;
     Splash: undefined;
     IndeterminateSplash: undefined;
@@ -20,7 +20,7 @@ function getHeaderTitle(route: any) {
     // If the focused route is not found, we need to assume it's the initial screen
     // This can happen during if there hasn't been any navigation inside the screen
 
-    return getFocusedRouteNameFromRoute(route) ?? 'Foodspace';
+    return getFocusedRouteNameFromRoute(route) ?? 'REGROUP';
 }
 
 export default function Navigation() {
@@ -30,7 +30,7 @@ export default function Navigation() {
         <NavigationContainer theme={LeaperTheme}>
             <Stack.Navigator initialRouteName="IndeterminateSplash">
                 <Stack.Screen
-                    name="Leaper"
+                    name="REGROUP"
                     component={BottomTabs}
                     options={({ route, navigation }) => ({
                         headerTitle: getHeaderTitle(route),
