@@ -1,67 +1,88 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { View, StyleSheet } from 'react-native';
-import { Card, Text } from 'react-native-paper';
-import TinderCard from 'react-tinder-card';
+import { Button, Text, useTheme } from 'react-native-paper';
+import Swiper from 'react-native-deck-swiper';
+
 import { chatsData } from '../utils/sampleData';
 
-const onSwipe = (direction: string) => {
-    console.log('You swiped: ' + direction);
-};
-
-const onCardLeftScreen = (myIdentifier: string) => {
-    console.log(myIdentifier + ' left the screen');
-};
-
 export default function SeekScreen() {
-    const [lastDirection, setLastDirection] = useState();
-
-    const swiped = (direction: any, nameToDelete: string) => {
-        console.log('removing: ' + nameToDelete);
-        setLastDirection(direction);
-    };
-
-    const outOfFrame = (name: string) => {
-        console.log(name + ' left the screen!');
-    };
+    const theme = useTheme();
+    const [cardIndex, setCardIndex] = useState(0);
+    let swiperRef = useRef<Swiper<any>>(null);
 
     return (
-        <View style={styles.container}>
-            {chatsData.map((chatData, index) => {
-                return (
-                    <TinderCard
-                        key={index}
-                        onSwipe={onSwipe}
-                        onCardLeftScreen={() => onCardLeftScreen('fooBar')}>
-                        <Card
-                            style={{
-                                position: 'absolute',
-                                height: 650,
-                                top: -325,
-                                left: -200,
-                                borderRadius: 20,
-                                width: 400,
-                            }}>
-                            <Card.Content>
-                                <View
-                                    style={{
-                                        alignItems: 'center',
-                                    }}>
-                                    <Text>{chatData.name}</Text>
-                                </View>
-                            </Card.Content>
-                        </Card>
-                    </TinderCard>
-                );
-            })}
-        </View>
+        <>
+            <View style={styles.container}>
+                <Swiper
+                    cards={chatsData}
+                    ref={swiperRef}
+                    renderCard={(chatsData) => {
+                        return (
+                            <View style={styles.card}>
+                                <Text style={styles.text}>{chatsData.name}</Text>
+                            </View>
+                        );
+                    }}
+                    onSwiped={(cardIndex) => {
+                        console.log(cardIndex);
+                    }}
+                    onSwipedAll={() => {
+                        console.log('onSwipedAll');
+                    }}
+                    cardIndex={0}
+                    backgroundColor={theme.colors.background}
+                    stackSize={2}
+                />
+            </View>
+            <View style={styles.containerAlt}>
+                <Button
+                    mode="contained"
+                    onPress={() => {
+                        swiperRef.current?.swipeLeft();
+                    }}>
+                    Left
+                </Button>
+                <Button
+                    mode="contained"
+                    onPress={() => {
+                        swiperRef.current?.swipeRight();
+                    }}>
+                    Right
+                </Button>
+            </View>
+        </>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
-        position: 'relative',
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
+    },
+    containerAlt: {
+        flex: 0.2,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-evenly',
+    },
+    card: {
+        height: '80%',
+        borderRadius: 20,
+        borderWidth: 2,
+        borderColor: '#E8E8E8',
+        justifyContent: 'center',
+        backgroundColor: 'white',
+    },
+    text: {
+        textAlign: 'center',
+        fontSize: 30,
+        backgroundColor: 'transparent',
+    },
+    done: {
+        textAlign: 'center',
+        fontSize: 30,
+        color: 'white',
+        backgroundColor: 'transparent',
     },
 });
