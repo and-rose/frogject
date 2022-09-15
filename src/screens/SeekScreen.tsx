@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { View, StyleSheet } from 'react-native';
-import { Button, Text, useTheme } from 'react-native-paper';
+import { IconButton, Text, useTheme } from 'react-native-paper';
 import Swiper from 'react-native-deck-swiper';
 
 import { chatsData } from '../utils/sampleData';
@@ -35,20 +35,24 @@ export default function SeekScreen() {
                 />
             </View>
             <View style={styles.containerAlt}>
-                <Button
+                <IconButton
+                    icon="close"
                     mode="contained"
+                    iconColor={theme.colors.error}
+                    size={50}
                     onPress={() => {
                         swiperRef.current?.swipeLeft();
-                    }}>
-                    Left
-                </Button>
-                <Button
+                    }}
+                />
+                <IconButton
+                    icon="heart"
                     mode="contained"
+                    iconColor={theme.colors.success}
+                    size={50}
                     onPress={() => {
                         swiperRef.current?.swipeRight();
-                    }}>
-                    Right
-                </Button>
+                    }}
+                />
             </View>
         </>
     );
