@@ -34,6 +34,7 @@ export default function Navigation() {
                     component={BottomTabs}
                     options={({ route, navigation }) => ({
                         headerTitle: getHeaderTitle(route),
+                        headerTitleAlign: 'center',
                         headerRight: () => (
                             <IconButton
                                 icon="cog"
@@ -57,14 +58,6 @@ export default function Navigation() {
                     options={{
                         headerShown: false,
                         ...TransitionPresets.ScaleFromCenterAndroid,
-                    }}
-                />
-                <Stack.Screen
-                    name="CheckIn"
-                    component={Splash}
-                    options={{
-                        title: 'Check In',
-                        ...TransitionPresets.SlideFromRightIOS,
                     }}
                 />
                 <Stack.Screen

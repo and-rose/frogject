@@ -1,6 +1,8 @@
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import React from 'react';
+import ChatsScreen from '../screens/ChatsScreen';
+import SeekScreen from '../screens/SeekScreen';
 
 import SplashScreen from '../screens/Splash';
 
@@ -10,49 +12,18 @@ export const BottomTabs = () => {
     return (
         <Tab.Navigator initialRouteName="Home" shifting barStyle={{ backgroundColor: '#fff' }}>
             <Tab.Screen
-                name="Recruit"
+                name="Home"
                 component={SplashScreen}
                 options={{
                     tabBarIcon: ({ focused, color }) => {
                         return (
                             <MaterialCommunityIcons
-                                name={focused ? 'account-search' : 'account-search-outline'}
+                                name={focused ? 'home' : 'home-outline'}
                                 color={color}
                                 size={25}
                             />
                         );
                     },
-                }}
-            />
-            <Tab.Screen
-                name="Games"
-                component={SplashScreen}
-                options={{
-                    tabBarIcon: ({ focused, color }) => {
-                        return (
-                            <MaterialCommunityIcons
-                                name={focused ? 'gamepad-variant' : 'gamepad-variant-outline'}
-                                color={color}
-                                size={25}
-                            />
-                        );
-                    },
-                }}
-            />
-            <Tab.Screen
-                name="Messages"
-                component={SplashScreen}
-                options={{
-                    tabBarIcon: ({ focused, color }) => {
-                        return (
-                            <MaterialCommunityIcons
-                                name={focused ? 'chat' : 'chat-outline'}
-                                color={color}
-                                size={25}
-                            />
-                        );
-                    },
-                    tabBarBadge: 3,
                 }}
             />
             <Tab.Screen
@@ -68,6 +39,37 @@ export const BottomTabs = () => {
                             />
                         );
                     },
+                }}
+            />
+            <Tab.Screen
+                name="Seek"
+                component={SeekScreen}
+                options={{
+                    tabBarIcon: ({ focused, color }) => {
+                        return (
+                            <MaterialCommunityIcons
+                                name={focused ? 'account-search' : 'account-search-outline'}
+                                color={color}
+                                size={25}
+                            />
+                        );
+                    },
+                }}
+            />
+            <Tab.Screen
+                name="Chats"
+                component={ChatsScreen}
+                options={{
+                    tabBarIcon: ({ focused, color }) => {
+                        return (
+                            <MaterialCommunityIcons
+                                name={focused ? 'chat' : 'chat-outline'}
+                                color={color}
+                                size={25}
+                            />
+                        );
+                    },
+                    tabBarBadge: 3,
                 }}
             />
         </Tab.Navigator>
