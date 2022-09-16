@@ -8,7 +8,7 @@ import { chatsData } from '../utils/sampleData';
 export default function SeekScreen() {
     const theme = useTheme();
     const [cardIndex, setCardIndex] = useState(0);
-    let swiperRef = useRef<Swiper<any>>(null);
+    const swiperRef = useRef<Swiper<any>>(null);
 
     return (
         <>
@@ -16,15 +16,15 @@ export default function SeekScreen() {
                 <Swiper
                     cards={chatsData}
                     ref={swiperRef}
-                    renderCard={(chatsData) => {
+                    renderCard={data => {
                         return (
                             <View style={styles.card}>
-                                <Text style={styles.text}>{chatsData.name}</Text>
+                                <Text style={styles.text}>{data.name}</Text>
                             </View>
                         );
                     }}
-                    onSwiped={(cardIndex) => {
-                        console.log(cardIndex);
+                    onSwiped={index => {
+                        console.log(index);
                     }}
                     onSwipedAll={() => {
                         console.log('onSwipedAll');
