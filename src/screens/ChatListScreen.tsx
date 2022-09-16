@@ -9,7 +9,7 @@ import { getInitials } from '../utils/stringUtils';
 
 TimeAgo.addLocale(en);
 
-export default function ChatsScreen() {
+export default function ChatListScreen() {
     const theme = useTheme();
     const timeAgo = new TimeAgo('en-US');
 
@@ -17,7 +17,7 @@ export default function ChatsScreen() {
         <View>
             <FlatList
                 data={chatsData}
-                renderItem={(data) => (
+                renderItem={data => (
                     <List.Item
                         title={data.item.name}
                         onPress={() => {}}
