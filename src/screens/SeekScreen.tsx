@@ -1,10 +1,10 @@
 import React, { useRef } from 'react';
-import { View, StyleSheet } from 'react-native';
-import { IconButton, Text, useTheme } from 'react-native-paper';
+import { StyleSheet, View } from 'react-native';
 import Swiper from 'react-native-deck-swiper';
+import { ScrollView } from 'react-native-gesture-handler';
+import { IconButton, Text, useTheme } from 'react-native-paper';
 
 import { chatsData } from '../constants/sampleData';
-import { ScrollView } from 'react-native-gesture-handler';
 
 export default function SeekScreen() {
     const theme = useTheme();
@@ -22,6 +22,33 @@ export default function SeekScreen() {
                     infinite
                     stackAnimationFriction={40}
                     stackAnimationTension={40}
+                    animateOverlayLabelsOpacity
+                    verticalSwipe={false}
+                    cardIndex={0}
+                    backgroundColor={theme.colors.background}
+                    containerStyle={styles.container}
+                    stackSize={2}
+                    stackSeparation={0}
+                    stackScale={2}
+                    renderCard={data => {
+                        return (
+                            <ScrollView>
+                                <View
+                                    onStartShouldSetResponder={() => true}
+                                    onTouchEnd={e => {
+                                        e.stopPropagation();
+                                    }}
+                                    style={styles.card}>
+                                    <View style={styles.cardPicture}>
+                                        <Text style={styles.text}>{data.name}</Text>
+                                    </View>
+                                    <View style={styles.cardDescription}>
+                                        <Text style={styles.text}>Description</Text>
+                                    </View>
+                                </View>
+                            </ScrollView>
+                        );
+                    }}
                     overlayLabels={{
                         left: {
                             title: 'NOPE',
@@ -60,39 +87,6 @@ export default function SeekScreen() {
                             },
                         },
                     }}
-                    animateOverlayLabelsOpacity
-                    verticalSwipe={false}
-                    renderCard={data => {
-                        return (
-                            <ScrollView>
-                                <View
-                                    onStartShouldSetResponder={() => true}
-                                    onTouchEnd={e => {
-                                        e.stopPropagation();
-                                    }}
-                                    style={styles.card}>
-                                    <View style={styles.cardPicture}>
-                                        <Text style={styles.text}>{data.name}</Text>
-                                    </View>
-                                    <View style={styles.cardDescription}>
-                                        <Text style={styles.text}>Description</Text>
-                                    </View>
-                                </View>
-                            </ScrollView>
-                        );
-                    }}
-                    onSwiped={index => {
-                        console.log(index);
-                    }}
-                    onSwipedAll={() => {
-                        console.log('onSwipedAll');
-                    }}
-                    cardIndex={0}
-                    backgroundColor={theme.colors.background}
-                    containerStyle={styles.container}
-                    stackSize={2}
-                    stackSeparation={0}
-                    stackScale={2}
                 />
             </View>
             <View style={styles.containerAlt}>

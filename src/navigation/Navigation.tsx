@@ -4,6 +4,7 @@ import React from 'react';
 import { IconButton } from 'react-native-paper';
 
 import LeaperTheme from '../constants/theme';
+import DebugScreen from '../screens/DebugScreen';
 import IndeterminateSplash from '../screens/IndeterminateSplash';
 import Splash from '../screens/Splash';
 import BottomTabs from './BottomTabs';
@@ -13,14 +14,14 @@ export type RootStackParamList = {
     CheckIn: undefined;
     Splash: undefined;
     IndeterminateSplash: undefined;
-    Settings: undefined;
+    Debug: undefined;
 };
 
 function getHeaderTitle(route: any) {
     // If the focused route is not found, we need to assume it's the initial screen
     // This can happen during if there hasn't been any navigation inside the screen
 
-    return getFocusedRouteNameFromRoute(route) ?? 'REGROUP';
+    return getFocusedRouteNameFromRoute(route) ?? 'Home';
 }
 
 export default function Navigation() {
@@ -37,9 +38,9 @@ export default function Navigation() {
                         headerTitleAlign: 'center',
                         headerRight: () => (
                             <IconButton
-                                icon="cog"
+                                icon="bug"
                                 size={20}
-                                onPress={() => navigation.navigate('Settings')}
+                                onPress={() => navigation.navigate('Debug')}
                             />
                         ),
                     })}
@@ -61,10 +62,11 @@ export default function Navigation() {
                     }}
                 />
                 <Stack.Screen
-                    name="Settings"
-                    component={Splash}
+                    name="Debug"
+                    component={DebugScreen}
                     options={{
-                        title: 'Settings',
+                        headerTitleAlign: 'center',
+                        title: 'Debug',
                         ...TransitionPresets.SlideFromRightIOS,
                     }}
                 />
