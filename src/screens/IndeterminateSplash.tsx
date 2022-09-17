@@ -10,7 +10,7 @@ const IndeterminateSplash = (props: any) => {
     useEffect(() => {
         setTimeout(() => {
             setAppIsReady(true);
-        }, 1100);
+        }, 1);
     }, []);
 
     useEffect(() => {

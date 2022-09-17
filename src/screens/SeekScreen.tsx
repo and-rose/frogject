@@ -1,13 +1,13 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import { View, StyleSheet } from 'react-native';
 import { IconButton, Text, useTheme } from 'react-native-paper';
 import Swiper from 'react-native-deck-swiper';
 
-import { chatsData } from '../utils/sampleData';
+import { chatsData } from '../constants/sampleData';
+import { ScrollView } from 'react-native-gesture-handler';
 
 export default function SeekScreen() {
     const theme = useTheme();
-    const [cardIndex, setCardIndex] = useState(0);
     const swiperRef = useRef<Swiper<any>>(null);
 
     return (
@@ -16,11 +16,69 @@ export default function SeekScreen() {
                 <Swiper
                     cards={chatsData}
                     ref={swiperRef}
+                    cardVerticalMargin={0}
+                    cardHorizontalMargin={0}
+                    swipeAnimationDuration={200}
+                    infinite
+                    horizontalThreshold={150}
+                    stackAnimationFriction={40}
+                    stackAnimationTension={40}
+                    overlayLabels={{
+                        left: {
+                            title: 'NOPE',
+                            style: {
+                                label: {
+                                    backgroundColor: 'red',
+                                    borderColor: 'red',
+                                    color: 'white',
+                                    borderWidth: 1,
+                                },
+                                wrapper: {
+                                    flexDirection: 'column',
+                                    alignItems: 'flex-end',
+                                    justifyContent: 'flex-start',
+                                    marginTop: 30,
+                                    marginLeft: -30,
+                                },
+                            },
+                        },
+                        right: {
+                            title: 'YEP',
+                            style: {
+                                label: {
+                                    backgroundColor: 'green',
+                                    borderColor: 'green',
+                                    color: 'white',
+                                    borderWidth: 1,
+                                },
+                                wrapper: {
+                                    flexDirection: 'column',
+                                    alignItems: 'flex-start',
+                                    justifyContent: 'flex-start',
+                                    marginTop: 30,
+                                    marginLeft: 30,
+                                },
+                            },
+                        },
+                    }}
+                    animateOverlayLabelsOpacity
+                    verticalSwipe={false}
                     renderCard={data => {
                         return (
-                            <View style={styles.card}>
-                                <Text style={styles.text}>{data.name}</Text>
-                            </View>
+                            <ScrollView>
+                                <View
+                                    onStartShouldSetResponder={() => true}
+                                    onTouchEnd={e => {
+                                        e.stopPropagation();
+                                    }}>
+                                    <View style={styles.cardPicture}>
+                                        <Text style={styles.text}>{data.name}</Text>
+                                    </View>
+                                    <View style={styles.cardDescription}>
+                                        <Text style={styles.text}>Description</Text>
+                                    </View>
+                                </View>
+                            </ScrollView>
                         );
                     }}
                     onSwiped={index => {
@@ -32,6 +90,8 @@ export default function SeekScreen() {
                     cardIndex={0}
                     backgroundColor={theme.colors.background}
                     stackSize={2}
+                    stackSeparation={0}
+                    stackScale={2}
                 />
             </View>
             <View style={styles.containerAlt}>
@@ -71,11 +131,12 @@ const styles = StyleSheet.create({
         justifyContent: 'space-evenly',
     },
     card: {
-        height: '80%',
+        height: '90%',
+        width: '100%',
         borderRadius: 20,
         borderWidth: 2,
         borderColor: '#E8E8E8',
-        justifyContent: 'center',
+        justifyContent: 'flex-start',
         backgroundColor: 'white',
     },
     text: {
@@ -88,5 +149,17 @@ const styles = StyleSheet.create({
         fontSize: 30,
         color: 'white',
         backgroundColor: 'transparent',
+    },
+    cardPicture: {
+        height: 800,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#B0B0B0',
+    },
+    cardDescription: {
+        height: 800,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#585858',
     },
 });

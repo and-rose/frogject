@@ -1,6 +1,6 @@
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import React from 'react';
-import { View } from 'react-native';
+import { View, Platform } from 'react-native';
 import { MD2Colors, Text, useTheme } from 'react-native-paper';
 import { SvgXml } from 'react-native-svg';
 
@@ -17,7 +17,12 @@ export default function SplashScreen() {
                 justifyContent: 'space-around',
                 alignItems: 'center',
             }}>
-            <SvgXml xml={uuundulateShape} style={{ position: 'absolute', top: 0, opacity: 0.2 }} />
+            {Platform.OS !== 'web' && (
+                <SvgXml
+                    xml={uuundulateShape}
+                    style={{ position: 'absolute', top: 0, opacity: 0.2 }}
+                />
+            )}
             <View
                 style={{
                     backgroundColor: theme.colors.background,
