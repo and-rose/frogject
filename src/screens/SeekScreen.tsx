@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     containerAlt: {
-        flex: 0.2,
+        flex: 0.15,
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-evenly',

@@ -17,6 +17,8 @@ const LeaperTheme = {
         tertiary: '#F1E1A6',
         tertiaryContainer: '#F1E1A6',
         quaternary: '#F4BBBB',
+        surfaceVariant: '#d3f0e2',
+        surface: '#d3f0e2',
     },
 };
 
