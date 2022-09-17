@@ -70,7 +70,8 @@ export default function SeekScreen() {
                                     onStartShouldSetResponder={() => true}
                                     onTouchEnd={e => {
                                         e.stopPropagation();
-                                    }}>
+                                    }}
+                                    style={styles.card}>
                                     <View style={styles.cardPicture}>
                                         <Text style={styles.text}>{data.name}</Text>
                                     </View>
@@ -89,6 +90,7 @@ export default function SeekScreen() {
                     }}
                     cardIndex={0}
                     backgroundColor={theme.colors.background}
+                    containerStyle={styles.container}
                     stackSize={2}
                     stackSeparation={0}
                     stackScale={2}
@@ -121,8 +123,6 @@ export default function SeekScreen() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
     },
     containerAlt: {
         flex: 0.2,
@@ -131,35 +131,27 @@ const styles = StyleSheet.create({
         justifyContent: 'space-evenly',
     },
     card: {
-        height: '90%',
-        width: '100%',
+        height: '95%',
+        width: '95%',
+        marginTop: '2.5%',
         borderRadius: 20,
+        alignSelf: 'center',
         borderWidth: 2,
         borderColor: '#E8E8E8',
-        justifyContent: 'flex-start',
         backgroundColor: 'white',
     },
     text: {
         textAlign: 'center',
         fontSize: 30,
-        backgroundColor: 'transparent',
-    },
-    done: {
-        textAlign: 'center',
-        fontSize: 30,
-        color: 'white',
-        backgroundColor: 'transparent',
     },
     cardPicture: {
-        height: 800,
+        height: 700,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#B0B0B0',
     },
     cardDescription: {
-        height: 800,
+        height: 700,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#585858',
     },
 });
