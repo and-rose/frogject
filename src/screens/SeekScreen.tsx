@@ -20,7 +20,6 @@ export default function SeekScreen() {
                     cardHorizontalMargin={0}
                     swipeAnimationDuration={200}
                     infinite
-                    horizontalThreshold={150}
                     stackAnimationFriction={40}
                     stackAnimationTension={40}
                     overlayLabels={{
