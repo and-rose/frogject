@@ -2,8 +2,10 @@ import { getFocusedRouteNameFromRoute, NavigationContainer } from '@react-naviga
 import { createStackNavigator, TransitionPresets } from '@react-navigation/stack';
 import React from 'react';
 import { IconButton } from 'react-native-paper';
+import { ChatReportMenu } from '../components/ChatReportMenu';
 
 import LeaperTheme from '../constants/theme';
+import { ChatScreen } from '../screens/ChatScreen';
 import DebugScreen from '../screens/DebugScreen';
 import IndeterminateSplash from '../screens/IndeterminateSplash';
 import Splash from '../screens/Splash';
@@ -14,6 +16,7 @@ export type RootStackParamList = {
     CheckIn: undefined;
     Splash: undefined;
     IndeterminateSplash: undefined;
+    Chat: { name: string };
     Debug: undefined;
 };
 
@@ -69,6 +72,16 @@ export default function Navigation() {
                         title: 'Debug',
                         ...TransitionPresets.SlideFromRightIOS,
                     }}
+                />
+                <Stack.Screen
+                    name="Chat"
+                    component={ChatScreen}
+                    options={({ route, navigation }) => ({
+                        headerTitleAlign: 'center',
+                        title: route.params.name,
+                        headerRight: () => <ChatReportMenu />,
+                        ...TransitionPresets.SlideFromRightIOS,
+                    })}
                 />
             </Stack.Navigator>
         </NavigationContainer>

@@ -1,16 +1,22 @@
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import React from 'react';
-import ChatScreen from '../screens/ChatListScreen';
-import SeekScreen from '../screens/SeekScreen';
 
+import { ChatListScreen } from '../screens/ChatListScreen';
+import SeekScreen from '../screens/SeekScreen';
 import SplashScreen from '../screens/Splash';
 
 const Tab = createMaterialBottomTabNavigator();
 
 export const BottomTabs = () => {
     return (
-        <Tab.Navigator initialRouteName="Home" shifting barStyle={{ backgroundColor: '#fff' }}>
+        <Tab.Navigator
+            initialRouteName="Home"
+            shifting
+            barStyle={{ backgroundColor: '#fff' }}
+            sceneAnimationEnabled
+            sceneAnimationType="shifting"
+            safeAreaInsets={{ top: 0, bottom: 0 }}>
             <Tab.Screen
                 name="Home"
                 component={SplashScreen}
@@ -58,7 +64,7 @@ export const BottomTabs = () => {
             />
             <Tab.Screen
                 name="Chats"
-                component={ChatScreen}
+                component={ChatListScreen}
                 options={{
                     tabBarIcon: ({ focused, color }) => {
                         return (

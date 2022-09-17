@@ -1,8 +1,8 @@
 import React, { useRef } from 'react';
 import { StyleSheet, View } from 'react-native';
 import Swiper from 'react-native-deck-swiper';
-import { ScrollView } from 'react-native-gesture-handler';
-import { IconButton, Text, useTheme } from 'react-native-paper';
+import { IconButton, useTheme } from 'react-native-paper';
+import { SeekProfileCard } from '../components/SeekProfileCard';
 
 import { chatsData } from '../constants/sampleData';
 
@@ -16,13 +16,14 @@ export default function SeekScreen() {
                 <Swiper
                     cards={chatsData}
                     ref={swiperRef}
+                    animateOverlayLabelsOpacity
+                    overlayOpacityHorizontalThreshold={20}
                     cardVerticalMargin={0}
                     cardHorizontalMargin={0}
                     swipeAnimationDuration={200}
                     infinite
                     stackAnimationFriction={40}
                     stackAnimationTension={40}
-                    animateOverlayLabelsOpacity
                     verticalSwipe={false}
                     cardIndex={0}
                     backgroundColor={theme.colors.background}
@@ -31,23 +32,7 @@ export default function SeekScreen() {
                     stackSeparation={0}
                     stackScale={2}
                     renderCard={data => {
-                        return (
-                            <ScrollView>
-                                <View
-                                    onStartShouldSetResponder={() => true}
-                                    onTouchEnd={e => {
-                                        e.stopPropagation();
-                                    }}
-                                    style={styles.card}>
-                                    <View style={styles.cardPicture}>
-                                        <Text style={styles.text}>{data.name}</Text>
-                                    </View>
-                                    <View style={styles.cardDescription}>
-                                        <Text style={styles.text}>Description</Text>
-                                    </View>
-                                </View>
-                            </ScrollView>
-                        );
+                        return <SeekProfileCard profileData={data} />;
                     }}
                     overlayLabels={{
                         left: {
@@ -122,29 +107,5 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-evenly',
-    },
-    card: {
-        height: '95%',
-        width: '95%',
-        marginTop: '2.5%',
-        borderRadius: 20,
-        alignSelf: 'center',
-        borderWidth: 2,
-        borderColor: '#E8E8E8',
-        backgroundColor: 'white',
-    },
-    text: {
-        textAlign: 'center',
-        fontSize: 30,
-    },
-    cardPicture: {
-        height: 700,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    cardDescription: {
-        height: 700,
-        justifyContent: 'center',
-        alignItems: 'center',
     },
 });

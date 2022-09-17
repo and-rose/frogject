@@ -135,3 +135,5 @@ export const chatsData = [
         },
     },
 ];
+
+export const infoData = ['Male', 'Oceania', '18-30', 'Valorant', 'Casual'];

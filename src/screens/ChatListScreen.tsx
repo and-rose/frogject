@@ -7,10 +7,14 @@ import en from 'javascript-time-ago/locale/en';
 import { getInitials } from '../utils/stringUtils';
 import { FontAwesome } from '@expo/vector-icons';
 import { SwipeListView } from 'react-native-swipe-list-view';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { RootStackParamList } from '../navigation/Navigation';
 
 TimeAgo.addLocale(en);
 
-export default function ChatListScreen() {
+type Props = NativeStackScreenProps<RootStackParamList>;
+
+export function ChatListScreen({ route, navigation }: Props) {
     const theme = useTheme();
     const timeAgo = new TimeAgo('en-US');
     const [chatsData, setChatsData] = useState(
@@ -32,7 +36,9 @@ export default function ChatListScreen() {
                                 ? { fontWeight: 'bold', color: theme.colors.primary }
                                 : {}
                         }
-                        onPress={() => {}}
+                        onPress={() =>
+                            navigation.navigate('Chat', { name: rowData.item.data.name })
+                        }
                         description={rowData.item.data.lastMessage.text}
                         left={() => (
                             <Avatar.Text
@@ -67,6 +73,9 @@ export default function ChatListScreen() {
                         }
                     />
                 )}
+                renderToHardwareTextureAndroid
+                friction={100}
+                tension={100}
                 renderHiddenItem={(rowData, rowMap) => (
                     <View style={styles.rowBack}>
                         <TouchableOpacity
