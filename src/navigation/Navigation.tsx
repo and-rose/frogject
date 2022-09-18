@@ -2,12 +2,13 @@ import { getFocusedRouteNameFromRoute, NavigationContainer } from '@react-naviga
 import { createStackNavigator, TransitionPresets } from '@react-navigation/stack';
 import React from 'react';
 import { IconButton } from 'react-native-paper';
-import { ChatReportMenu } from '../components/ChatReportMenu';
+import { ChatMoreMenu } from '../components/ChatReportMenu';
 
 import LeaperTheme from '../constants/theme';
 import { ChatScreen } from '../screens/ChatScreen';
 import DebugScreen from '../screens/DebugScreen';
 import IndeterminateSplash from '../screens/IndeterminateSplash';
+import LiveReactScreen from '../screens/LiveReactScreen';
 import Splash from '../screens/Splash';
 import BottomTabs from './BottomTabs';
 
@@ -16,6 +17,7 @@ export type RootStackParamList = {
     CheckIn: undefined;
     Splash: undefined;
     IndeterminateSplash: undefined;
+    LiveReact: undefined;
     Chat: { name: string };
     Debug: undefined;
 };
@@ -79,7 +81,16 @@ export default function Navigation() {
                     options={({ route, navigation }) => ({
                         headerTitleAlign: 'center',
                         title: route.params.name,
-                        headerRight: () => <ChatReportMenu />,
+                        headerRight: () => <ChatMoreMenu route={route} navigation={navigation} />,
+                        ...TransitionPresets.SlideFromRightIOS,
+                    })}
+                />
+                <Stack.Screen
+                    name="LiveReact"
+                    component={LiveReactScreen}
+                    options={({ route, navigation }) => ({
+                        headerTitleAlign: 'center',
+                        title: 'Live React',
                         ...TransitionPresets.SlideFromRightIOS,
                     })}
                 />

@@ -1651,6 +1651,11 @@
   resolved "https://registry.yarnpkg.com/@ide/backoff/-/backoff-1.0.0.tgz#466842c25bd4a4833e0642fab41ccff064010176"
   integrity sha512-F0YfUDjvT+Mtt/R4xdl2X0EYCHMMiJqNLdxHD++jDT5ydEFIyqbCHh51Qx2E211dgZprPKhV7sHmnXKpLuvc5g==
 
+"@ishikawa-masashi/react-joystick@^0.0.9":
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/@ishikawa-masashi/react-joystick/-/react-joystick-0.0.9.tgz#55c5fe8ad8efbae21a95b876d1683ad7ae0eea19"
+  integrity sha512-VtnI9t3c2p+rwAeAHsiIBXEyzU77uzOXDnitYHK88IkF+TR2g5wxT0v2jjcx9HYPDOl3n26G7y0CxRmAbPfNqA==
+
 "@jest/create-cache-key-function@^27.0.1":
   version "27.5.1"
   resolved "https://registry.npmjs.org/@jest/create-cache-key-function/-/create-cache-key-function-27.5.1.tgz"
@@ -5360,6 +5365,11 @@ expo-modules-core@0.11.4:
     compare-versions "^3.4.0"
     invariant "^2.2.4"
 
+expo-multi-touch@^0.0.0:
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/expo-multi-touch/-/expo-multi-touch-0.0.0.tgz#b0fa3274c24fbd6d837d08e159ccfb444dc5cff3"
+  integrity sha512-W52Kf+QuVprl8VNanFO1R8ZBq8n71kSU0JFgKHR87thb9dzjtxQH6P7yS2OHtBofL0faPs8EQAirgytVuQnAoA==
+
 expo-notifications@~0.16.1:
   version "0.16.1"
   resolved "https://registry.yarnpkg.com/expo-notifications/-/expo-notifications-0.16.1.tgz#4e6c74fb6b3aa615a36f587e0fd4876ca48ecf91"
@@ -6600,7 +6610,7 @@ internal-slot@^1.0.3:
     has "^1.0.3"
     side-channel "^1.0.4"
 
-invariant@^2.2.4:
+invariant@2.2.4, invariant@^2.2.4:
   version "2.2.4"
   resolved "https://registry.npmjs.org/invariant/-/invariant-2.2.4.tgz"
   integrity sha512-phJfQVBuaJM5raOpJjSfkiD6BpbCE4Ns//LaXl6wGYtUBY83nWS6Rf9tXm2e8VaK60JEjYldbPif/A2B1C2gNA==
@@ -7337,6 +7347,11 @@ kleur@^3.0.3:
   version "3.0.3"
   resolved "https://registry.npmjs.org/kleur/-/kleur-3.0.3.tgz"
   integrity sha512-eTIzlVOSUR+JxdDFepEYcBMtZ9Qqdef+rnzWdRZuMbOywu5tO2w2N7rqjoANZ5k9vywhL6Br1VRjUIgTQx4E8w==
+
+korol-joystick@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/korol-joystick/-/korol-joystick-1.5.0.tgz#73b4e949648384415703775cf376cbfaa48a3f4d"
+  integrity sha512-dPpRemFAYaHid6mC6Q7dhkPJfVx9suWqxiPL+eQQeIaPLGpZ4zj+Ssn4sr87t9PDvQHEEmnih3nOv5kq6lOnQg==
 
 last-call-webpack-plugin@^3.0.0:
   version "3.0.0"
@@ -9623,6 +9638,11 @@ react-is@^17.0.1:
   resolved "https://registry.npmjs.org/react-is/-/react-is-17.0.2.tgz"
   integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
 
+react-joystick-component@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/react-joystick-component/-/react-joystick-component-4.0.1.tgz#c70a76d1dc8fdb2b9713657b0bb905dafe965ada"
+  integrity sha512-efPaCNoDIiBNs0eUjsrE4Q+q4h5zXDqBs54vTMYSPv73useSl8VsJJeOburMHuxwsS4HoqqMu12Aav9SM7Usew==
+
 react-native-codegen@^0.69.2:
   version "0.69.2"
   resolved "https://registry.npmjs.org/react-native-codegen/-/react-native-codegen-0.69.2.tgz"
@@ -9638,12 +9658,24 @@ react-native-communications@2.2.1:
   resolved "https://registry.yarnpkg.com/react-native-communications/-/react-native-communications-2.2.1.tgz#7883b56b20a002eeb790c113f8616ea8692ca795"
   integrity sha512-5+C0X9mopI0+qxyQHzOPEi5v5rxNBQjxydPPiKMQSlX1RBIcJ8uTcqUPssQ9Mo8p6c1IKIWJUSqCj4jAmD0qVQ==
 
+react-native-confetti-cannon@^1.5.2:
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/react-native-confetti-cannon/-/react-native-confetti-cannon-1.5.2.tgz#ca1a05edd2a64b080ea8b6238c49277908e1f123"
+  integrity sha512-IZuWjlW7QsdxEGNnvpD6W+7iKCCQhnd5BvuNvMtirU7Nxm8WS2N6LPGMBz1ZYDuusG+GRZkoXXTNCdoAAGpCTg==
+
 react-native-deck-swiper@^2.0.8:
   version "2.0.8"
   resolved "https://registry.yarnpkg.com/react-native-deck-swiper/-/react-native-deck-swiper-2.0.8.tgz#b335eeecaae40c8052ada1bb43c09c10664a13f3"
   integrity sha512-dsegRnT2ZavOiW41XB/m8GO+saYd3cZ3tkpqXjgP5mxlanQRLsbtCDtdV14vH4fqBghVRJ8zE7aHpnxPyAZGvg==
   dependencies:
     prop-types "15.5.10"
+
+react-native-draggable@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/react-native-draggable/-/react-native-draggable-3.3.0.tgz#6f07c3ad4cff018bf0455fc48dbfe5f0af9b72cd"
+  integrity sha512-aU20CaKBmzXrwE9eTJZ+GDOr52mXLchg5Vydbx5rz8nYXlN+ppHIoTPgyXduyWNwpZ/DR6tyFtMwdgUHpuN6oA==
+  dependencies:
+    prop-types "^15.7.2"
 
 react-native-gesture-handler@~2.5.0:
   version "2.5.0"
@@ -9755,6 +9787,14 @@ react-native-web@~0.18.7:
     normalize-css-color "^1.0.2"
     postcss-value-parser "^4.2.0"
     styleq "^0.1.2"
+
+react-native-webview@^11.23.1:
+  version "11.23.1"
+  resolved "https://registry.yarnpkg.com/react-native-webview/-/react-native-webview-11.23.1.tgz#6a4bf2620e491dd4fecf4e6dc079005117fae12c"
+  integrity sha512-bmqsdg4RYOUYD37R9XTrQALm7eD62KbLNPRfgvpLGd1SjaurvAjjsLrLN4mt6yOtKOMKeZvlcAl3x6De6cCQsA==
+  dependencies:
+    escape-string-regexp "2.0.0"
+    invariant "2.2.4"
 
 react-native@0.69.5:
   version "0.69.5"
