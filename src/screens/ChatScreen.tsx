@@ -59,3 +59,6 @@ const styles = StyleSheet.create({
         textAlign: 'center',
     },
 });
+function createMaterialTopTabNavigator() {
+    throw new Error('Function not implemented.');
+}

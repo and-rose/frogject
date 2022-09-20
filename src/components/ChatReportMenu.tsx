@@ -12,14 +12,6 @@ export function ChatMoreMenu(props: { route: any; navigation: any }) {
                 onDismiss={() => setShowMenu(false)}
                 anchor={<IconButton icon="dots-vertical" onPress={() => setShowMenu(true)} />}>
                 <Menu.Item leadingIcon="alert" onPress={() => {}} title="Report User" />
-                <Menu.Item
-                    leadingIcon="gamepad-variant"
-                    onPress={() => {
-                        props.navigation.navigate('LiveReact');
-                        setShowMenu(false);
-                    }}
-                    title="Launch Live React"
-                />
             </Menu>
         </View>
     );

@@ -38,7 +38,7 @@ export function ChatListScreen({ route, navigation }: Props) {
                                 : {}
                         }
                         onPress={() =>
-                            navigation.navigate('Chat', { name: rowData.item.data.name })
+                            navigation.navigate('ChatTopTabs', { name: rowData.item.data.name })
                         }
                         description={rowData.item.data.lastMessage.text}
                         left={() => (

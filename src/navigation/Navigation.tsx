@@ -15,6 +15,7 @@ import IndeterminateSplash from '../screens/IndeterminateSplash';
 import LiveReactScreen from '../screens/LiveReactScreen';
 import Splash from '../screens/Splash';
 import BottomTabs, { HomeStackParams } from './BottomTabs';
+import ChatTopTabs from './ChatTopTabs';
 
 export type RootStackParamList = {
     REGROUP: NavigatorScreenParams<HomeStackParams>;
@@ -22,7 +23,7 @@ export type RootStackParamList = {
     Splash: undefined;
     IndeterminateSplash: undefined;
     LiveReact: undefined;
-    Chat: { name: string };
+    ChatTopTabs: { name: string };
     Debug: undefined;
 };
 
@@ -88,8 +89,8 @@ export default function Navigation() {
                     }}
                 />
                 <Stack.Screen
-                    name="Chat"
-                    component={ChatScreen}
+                    name="ChatTopTabs"
+                    component={ChatTopTabs}
                     options={({ route, navigation }) => ({
                         headerTitleAlign: 'center',
                         title: route.params.name,
