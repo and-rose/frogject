@@ -9,6 +9,7 @@ import { FontAwesome } from '@expo/vector-icons';
 import { SwipeListView } from 'react-native-swipe-list-view';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../navigation/Navigation';
+import LeaperTheme from '../constants/theme';
 
 TimeAgo.addLocale(en);
 
@@ -134,7 +135,7 @@ const styles = StyleSheet.create({
         width: 75,
     },
     backRightBtnRight: {
-        backgroundColor: 'red',
+        backgroundColor: LeaperTheme.colors.error,
         right: 0,
     },
 });

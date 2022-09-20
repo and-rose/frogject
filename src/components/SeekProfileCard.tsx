@@ -35,6 +35,11 @@ export function SeekProfileCard(props: SeekProfileCardProps) {
                     }}
                     style={styles.container}>
                     <ImageBackground
+                        imageStyle={{
+                            overflow: 'hidden',
+                            borderTopLeftRadius: 10,
+                            borderTopRightRadius: 10,
+                        }}
                         style={styles.cardPicture}
                         resizeMode="cover"
                         source={require('../../assets/400x700.png')}>
@@ -105,13 +110,8 @@ const styles = StyleSheet.create({
     },
     card: {
         width: '100%',
-        height: '81%',
-        padding: 15,
-        marginTop: '2.5%',
-        borderRadius: 20,
+        height: '84%',
         alignSelf: 'center',
-        borderWidth: 2,
-        borderColor: '#E8E8E8',
         backgroundColor: 'white',
     },
     nameAndDetails: {
@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
         marginBottom: 10,
     },
     cardPicture: {
-        height: 600,
+        height: 690,
         width: '100%',
         alignSelf: 'center',
         justifyContent: 'flex-end',
