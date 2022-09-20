@@ -1,14 +1,14 @@
 import React from 'react';
-import { StyleSheet, TouchableHighlight, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 import SelectionCard from '../components/SelectionCard';
-import { homeCardsData } from '../constants/sampleData';
+import { tiers } from '../constants/sampleData';
 
-export default function HomeScreen() {
+export default function RewardsScreen() {
     return (
         <View style={styles.container}>
-            {homeCardsData.map((card, index) => {
-                return <SelectionCard title={card.title} route={card.route} key={index} />;
+            {tiers.map((card, index) => {
+                return <SelectionCard title={card} key={index} />;
             })}
         </View>
     );

@@ -5,6 +5,7 @@ import { useTheme } from 'react-native-paper';
 
 import { ChatListScreen } from '../screens/ChatListScreen';
 import HomeScreen from '../screens/HomeScreen';
+import RewardsScreen from '../screens/RewardsScreen';
 import SeekScreen from '../screens/SeekScreen';
 import SplashScreen from '../screens/Splash';
 
@@ -13,7 +14,7 @@ export type HomeStackParams = {
     Profile: undefined;
     Swipe: undefined;
     Messaging: undefined;
-    RewardsStore: undefined;
+    Rewards: undefined;
 };
 
 const Tab = createMaterialBottomTabNavigator<HomeStackParams>();

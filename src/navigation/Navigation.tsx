@@ -5,7 +5,7 @@ import {
 } from '@react-navigation/native';
 import { createStackNavigator, TransitionPresets } from '@react-navigation/stack';
 import React from 'react';
-import { IconButton } from 'react-native-paper';
+import { Badge, IconButton } from 'react-native-paper';
 import { ChatMoreMenu } from '../components/ChatReportMenu';
 import LeaperTheme from '../constants/theme';
 
@@ -13,6 +13,7 @@ import { ChatScreen } from '../screens/ChatScreen';
 import DebugScreen from '../screens/DebugScreen';
 import IndeterminateSplash from '../screens/IndeterminateSplash';
 import LiveReactScreen from '../screens/LiveReactScreen';
+import RewardsScreen from '../screens/RewardsScreen';
 import Splash from '../screens/Splash';
 import BottomTabs, { HomeStackParams } from './BottomTabs';
 import ChatTopTabs from './ChatTopTabs';
@@ -25,6 +26,7 @@ export type RootStackParamList = {
     LiveReact: undefined;
     ChatTopTabs: { name: string };
     Debug: undefined;
+    Rewards: undefined;
 };
 
 function getHeaderTitle(route: any) {
@@ -42,6 +44,7 @@ export default function Navigation() {
             <Stack.Navigator
                 initialRouteName="IndeterminateSplash"
                 screenOptions={{
+                    headerTitleAlign: 'center',
                     headerTitleStyle: {
                         fontFamily: 'JosefinSans_400Regular',
                         textTransform: 'uppercase',
@@ -57,13 +60,27 @@ export default function Navigation() {
                     component={BottomTabs}
                     options={({ route, navigation }) => ({
                         headerTitle: getHeaderTitle(route),
-                        headerTitleAlign: 'center',
-                        headerRight: () => (
+                        headerLeft: () => (
                             <IconButton
                                 icon="bug"
                                 size={20}
                                 onPress={() => navigation.navigate('Debug')}
                             />
+                        ),
+                        headerRight: () => (
+                            <>
+                                <Badge
+                                    visible
+                                    size={16}
+                                    style={{ position: 'absolute', top: 5, right: 5 }}>
+                                    1
+                                </Badge>
+                                <IconButton
+                                    icon="gift"
+                                    size={20}
+                                    onPress={() => navigation.navigate('Rewards')}
+                                />
+                            </>
                         ),
                     })}
                 />
@@ -87,7 +104,6 @@ export default function Navigation() {
                     name="Debug"
                     component={DebugScreen}
                     options={{
-                        headerTitleAlign: 'center',
                         title: 'Debug',
                         ...TransitionPresets.SlideFromRightIOS,
                     }}
@@ -96,7 +112,6 @@ export default function Navigation() {
                     name="ChatTopTabs"
                     component={ChatTopTabs}
                     options={({ route, navigation }) => ({
-                        headerTitleAlign: 'center',
                         title: route.params.name,
                         headerRight: () => <ChatMoreMenu route={route} navigation={navigation} />,
                         ...TransitionPresets.SlideFromRightIOS,
@@ -105,9 +120,16 @@ export default function Navigation() {
                 <Stack.Screen
                     name="LiveReact"
                     component={LiveReactScreen}
-                    options={({ route, navigation }) => ({
-                        headerTitleAlign: 'center',
+                    options={() => ({
                         title: 'Live React',
+                        ...TransitionPresets.SlideFromRightIOS,
+                    })}
+                />
+                <Stack.Screen
+                    name="Rewards"
+                    component={RewardsScreen}
+                    options={() => ({
+                        title: 'Rewards',
                         ...TransitionPresets.SlideFromRightIOS,
                     })}
                 />

@@ -1,3 +1,5 @@
+import { HomeStackParams } from '../navigation/BottomTabs';
+
 export const chatsData = [
     {
         id: 1,
@@ -136,5 +138,26 @@ export const chatsData = [
     },
 ];
 
+export const homeCardsData: { title: string; route: keyof HomeStackParams }[] = [
+    {
+        title: 'Profile',
+        route: 'Profile',
+    },
+    {
+        title: 'Swipe',
+        route: 'Swipe',
+    },
+    {
+        title: 'Messaging',
+        route: 'Messaging',
+    },
+    {
+        title: 'Rewards Store',
+        route: 'Rewards',
+    },
+];
+
 export const infoData = ['Male', 'Oceania', '18-30', 'Valorant', 'Casual'];
 export const shortInfoData = ['Sentinel', 'Silver'];
+
+export const tiers = ['Tier 1', 'Tier 2', 'Tier 3'];

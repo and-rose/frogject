@@ -1,11 +1,11 @@
 import { TabActionHelpers, useNavigation } from '@react-navigation/native';
 import React from 'react';
-import { StyleSheet, TouchableHighlight, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { Card, Text, TouchableRipple } from 'react-native-paper';
 
 import { HomeStackParams } from '../navigation/BottomTabs';
 
-export default function SelectionCard(props: { title: string; route: keyof HomeStackParams }) {
+export default function SelectionCard(props: { title: string; route?: keyof HomeStackParams }) {
     const navigation = useNavigation<TabActionHelpers<HomeStackParams>>();
 
     return (
@@ -15,7 +15,9 @@ export default function SelectionCard(props: { title: string; route: keyof HomeS
                     style={styles.card}
                     collapsable
                     onPress={() => {
-                        navigation.jumpTo(props.route);
+                        if (props.route) {
+                            navigation.jumpTo(props.route);
+                        }
                     }}
                     mode="contained">
                     <Card.Content style={styles.cardTitleView}>
