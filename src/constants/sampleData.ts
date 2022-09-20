@@ -1,7 +1,7 @@
 export const chatsData = [
     {
         id: 1,
-        name: 'Ethan Gonzalez',
+        name: 'Ethan',
         unread: true,
         lastMessage: {
             text: 'You on your way?',
@@ -10,7 +10,7 @@ export const chatsData = [
     },
     {
         id: 2,
-        name: 'Bryan Wallace',
+        name: 'Bryan',
         unread: true,
         lastMessage: {
             text: "Hey, it's me",
@@ -19,7 +19,7 @@ export const chatsData = [
     },
     {
         id: 3,
-        name: 'Avery Stewart',
+        name: 'Avery',
         unread: true,
         lastMessage: {
             text: 'I should buy a boat',
@@ -28,7 +28,7 @@ export const chatsData = [
     },
     {
         id: 4,
-        name: 'Katie Peterson',
+        name: 'Katie',
         unread: false,
         lastMessage: {
             text: 'Look at my mukluks!',
@@ -37,7 +37,7 @@ export const chatsData = [
     },
     {
         id: 5,
-        name: 'Ray Edwards',
+        name: 'Ray',
         unread: false,
         lastMessage: {
             text: 'This is wicked good ice cream.',
@@ -46,7 +46,7 @@ export const chatsData = [
     },
     {
         id: 6,
-        name: 'Bryan Wallace',
+        name: 'Bryan',
         unread: false,
         lastMessage: {
             text: "Hey, it's me",
@@ -55,7 +55,7 @@ export const chatsData = [
     },
     {
         id: 7,
-        name: 'Avery Stewart',
+        name: 'Avery',
         unread: false,
         lastMessage: {
             text: 'I should buy a boat',
@@ -64,7 +64,7 @@ export const chatsData = [
     },
     {
         id: 8,
-        name: 'Katie Peterson',
+        name: 'Katie',
         unread: false,
         lastMessage: {
             text: 'Look at my mukluks!',
@@ -73,7 +73,7 @@ export const chatsData = [
     },
     {
         id: 9,
-        name: 'Ray Edwards',
+        name: 'Ray',
         unread: false,
         lastMessage: {
             text: 'This is wicked good ice cream.',
@@ -82,7 +82,7 @@ export const chatsData = [
     },
     {
         id: 10,
-        name: 'Katie Peterson',
+        name: 'Katie',
         unread: false,
         lastMessage: {
             text: 'Look at my mukluks!',
@@ -91,7 +91,7 @@ export const chatsData = [
     },
     {
         id: 11,
-        name: 'Ray Edwards',
+        name: 'Ray',
         unread: false,
         lastMessage: {
             text: 'This is wicked good ice cream.',
@@ -100,7 +100,7 @@ export const chatsData = [
     },
     {
         id: 12,
-        name: 'Bryan Wallace',
+        name: 'Bryan',
         unread: false,
         lastMessage: {
             text: "Hey, it's me",
@@ -109,7 +109,7 @@ export const chatsData = [
     },
     {
         id: 13,
-        name: 'Avery Stewart',
+        name: 'Avery',
         unread: false,
         lastMessage: {
             text: 'I should buy a boat',
@@ -118,7 +118,7 @@ export const chatsData = [
     },
     {
         id: 14,
-        name: 'Katie Peterson',
+        name: 'Katie',
         unread: false,
         lastMessage: {
             text: 'Look at my mukluks!',
@@ -127,7 +127,7 @@ export const chatsData = [
     },
     {
         id: 15,
-        name: 'Ray Edwards',
+        name: 'Ray',
         unread: false,
         lastMessage: {
             text: 'This is wicked good ice cream.',
@@ -137,3 +137,4 @@ export const chatsData = [
 ];
 
 export const infoData = ['Male', 'Oceania', '18-30', 'Valorant', 'Casual'];
+export const shortInfoData = ['Sentinel', 'Silver'];

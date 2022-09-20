@@ -1,19 +1,23 @@
-import { getFocusedRouteNameFromRoute, NavigationContainer } from '@react-navigation/native';
+import {
+    getFocusedRouteNameFromRoute,
+    NavigationContainer,
+    NavigatorScreenParams,
+} from '@react-navigation/native';
 import { createStackNavigator, TransitionPresets } from '@react-navigation/stack';
 import React from 'react';
 import { IconButton } from 'react-native-paper';
 import { ChatMoreMenu } from '../components/ChatReportMenu';
-
 import LeaperTheme from '../constants/theme';
+
 import { ChatScreen } from '../screens/ChatScreen';
 import DebugScreen from '../screens/DebugScreen';
 import IndeterminateSplash from '../screens/IndeterminateSplash';
 import LiveReactScreen from '../screens/LiveReactScreen';
 import Splash from '../screens/Splash';
-import BottomTabs from './BottomTabs';
+import BottomTabs, { HomeStackParams } from './BottomTabs';
 
 export type RootStackParamList = {
-    REGROUP: undefined;
+    REGROUP: NavigatorScreenParams<HomeStackParams>;
     CheckIn: undefined;
     Splash: undefined;
     IndeterminateSplash: undefined;
@@ -33,8 +37,16 @@ export default function Navigation() {
     const Stack = createStackNavigator<RootStackParamList>();
 
     return (
-        <NavigationContainer theme={LeaperTheme}>
-            <Stack.Navigator initialRouteName="IndeterminateSplash">
+        <NavigationContainer>
+            <Stack.Navigator
+                initialRouteName="IndeterminateSplash"
+                screenOptions={{
+                    headerStyle: {
+                        elevation: 0,
+                        shadowOpacity: 0,
+                        borderBottomWidth: 0,
+                    },
+                }}>
                 <Stack.Screen
                     name="REGROUP"
                     component={BottomTabs}

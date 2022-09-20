@@ -1,11 +1,13 @@
 import * as React from 'react';
 import { ScrollView, View, StyleSheet, ImageBackground } from 'react-native';
-import { Chip, Divider, Text } from 'react-native-paper';
+import { Chip, Divider, IconButton, Text, useTheme } from 'react-native-paper';
 import { LoremIpsum } from 'lorem-ipsum';
-import { infoData } from '../constants/sampleData';
+import { infoData, shortInfoData } from '../constants/sampleData';
+import { REGROUPChip } from './REGROUPChip';
 
 export interface SeekProfileCardProps {
     profileData: any;
+    swiperRef: any;
 }
 
 const lorem = new LoremIpsum({
@@ -22,6 +24,7 @@ const lorem = new LoremIpsum({
 const lorem1 = lorem.generateSentences(3);
 
 export function SeekProfileCard(props: SeekProfileCardProps) {
+    const theme = useTheme();
     return (
         <View style={styles.card}>
             <ScrollView>
@@ -35,14 +38,50 @@ export function SeekProfileCard(props: SeekProfileCardProps) {
                         style={styles.cardPicture}
                         resizeMode="cover"
                         source={require('../../assets/400x700.png')}>
-                        <Text style={styles.text}>{props.profileData.name}</Text>
+                        <View style={styles.containerAlt}>
+                            <IconButton
+                                icon="close"
+                                mode="contained"
+                                iconColor={theme.colors.background}
+                                size={50}
+                                onPress={() => {
+                                    props.swiperRef.current?.swipeLeft();
+                                }}
+                            />
+                            <IconButton
+                                icon="heart"
+                                mode="contained"
+                                iconColor={theme.colors.background}
+                                size={50}
+                                onPress={() => {
+                                    props.swiperRef.current?.swipeRight();
+                                }}
+                            />
+                        </View>
+                        <View style={styles.nameAndDetails}>
+                            <Text style={styles.text}>{props.profileData.name}</Text>
+                            <View
+                                style={{
+                                    flexDirection: 'row',
+                                    flexWrap: 'wrap',
+                                    justifyContent: 'flex-start',
+                                }}>
+                                {shortInfoData.map((infoPiece, index) => {
+                                    return (
+                                        <REGROUPChip
+                                            key={index}
+                                            text={infoPiece}
+                                            emphasis="focused"
+                                        />
+                                    );
+                                })}
+                            </View>
+                        </View>
                     </ImageBackground>
                     <View style={styles.cardDescription}>
-                        <Divider bold style={{ marginBottom: 5 }} />
                         <Text variant="titleMedium">About Me</Text>
                         <Text variant="bodyMedium">{lorem1}</Text>
                         <Divider bold style={{ marginVertical: 10 }} />
-                        <Text variant="titleMedium">Basic Info</Text>
                         <View
                             style={{
                                 flexDirection: 'row',
@@ -50,27 +89,7 @@ export function SeekProfileCard(props: SeekProfileCardProps) {
                                 justifyContent: 'flex-start',
                             }}>
                             {infoData.map((infoPiece, index) => {
-                                return (
-                                    <Chip style={{ margin: 5 }} key={index}>
-                                        {infoPiece}
-                                    </Chip>
-                                );
-                            })}
-                        </View>
-                        <Divider bold style={{ marginVertical: 10 }} />
-                        <Text variant="titleMedium">Interests</Text>
-                        <View
-                            style={{
-                                flexDirection: 'row',
-                                flexWrap: 'wrap',
-                                justifyContent: 'flex-start',
-                            }}>
-                            {infoData.map((infoPiece, index) => {
-                                return (
-                                    <Chip style={{ margin: 5 }} key={index}>
-                                        {infoPiece}
-                                    </Chip>
-                                );
+                                return <REGROUPChip key={index} text={infoPiece} emphasis="none" />;
                             })}
                         </View>
                     </View>
@@ -95,10 +114,16 @@ const styles = StyleSheet.create({
         borderColor: '#E8E8E8',
         backgroundColor: 'white',
     },
+    nameAndDetails: {
+        position: 'absolute',
+        marginLeft: 5,
+        padding: 10,
+    },
     text: {
-        padding: 20,
+        fontFamily: 'JosefinSans_400Regular',
         textAlign: 'left',
         fontSize: 30,
+        marginBottom: 10,
     },
     cardPicture: {
         height: 600,
@@ -107,5 +132,15 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-end',
         alignItems: 'flex-start',
     },
-    cardDescription: {},
+    cardDescription: {
+        padding: 10,
+    },
+    containerAlt: {
+        width: '100%',
+        flex: 1,
+        padding: 10,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+    },
 });

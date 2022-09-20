@@ -1,24 +1,22 @@
-import { DefaultTheme as NavigationDefaultTheme } from '@react-navigation/native';
-import merge from 'deepmerge';
-import { MD3LightTheme as PaperDefaultTheme } from 'react-native-paper';
+import { configureFonts, DefaultTheme } from 'react-native-paper';
 
-const CombinedDefaultTheme = merge(PaperDefaultTheme, NavigationDefaultTheme);
-
+// const CombinedDefaultTheme = merge(PaperDefaultTheme, NavigationDefaultTheme);
 const LeaperTheme = {
-    ...CombinedDefaultTheme,
+    ...DefaultTheme,
     roundness: 2,
     version: 3,
     colors: {
-        ...CombinedDefaultTheme.colors,
-        primary: '#295F4E',
-        primaryContainer: '#295F4E',
-        secondary: '#6DB193',
-        secondaryContainer: '#6DB193',
-        tertiary: '#F1E1A6',
-        tertiaryContainer: '#F1E1A6',
-        quaternary: '#F4BBBB',
-        surfaceVariant: '#d3f0e2',
-        surface: '#d3f0e2',
+        ...DefaultTheme.colors,
+        bottomTabBar: '#3F3F3F',
+        primary: '#4F3FF8',
+        primaryContainer: '#4F3FF8',
+        secondary: '#7C9BF8',
+        secondaryContainer: '#7C9BF8',
+        surfaceVariant: '#7C9BF8',
+        surface: '#7C9BF8',
+        error: '#C52F2F',
+        unfocused: '#D9D9D9',
+        background: '#FFFFFF',
     },
 };
 

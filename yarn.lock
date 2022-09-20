@@ -1220,6 +1220,11 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
+"@expo-google-fonts/josefin-sans@^0.2.2":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@expo-google-fonts/josefin-sans/-/josefin-sans-0.2.2.tgz#55ba9c00deff2ac63a3f0cd02b290f8e8d2c48e1"
+  integrity sha512-ZcYm5L3z2dK75mZvE3aJQKbpw2llMj8Vf42366sF2MmfK2MpHWwq8TdxYkpWWY+FkM2CQANwVE9POwRicQIfkw==
+
 "@expo-google-fonts/roboto@^0.2.2":
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/@expo-google-fonts/roboto/-/roboto-0.2.2.tgz#0a9f4685e8d02bdb0d2d2919c102f531bdb353d4"
@@ -9642,6 +9647,11 @@ react-joystick-component@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/react-joystick-component/-/react-joystick-component-4.0.1.tgz#c70a76d1dc8fdb2b9713657b0bb905dafe965ada"
   integrity sha512-efPaCNoDIiBNs0eUjsrE4Q+q4h5zXDqBs54vTMYSPv73useSl8VsJJeOburMHuxwsS4HoqqMu12Aav9SM7Usew==
+
+react-native-actions-sheet@^0.8.7:
+  version "0.8.7"
+  resolved "https://registry.yarnpkg.com/react-native-actions-sheet/-/react-native-actions-sheet-0.8.7.tgz#9f5e15b10afc30bb9de3e886ec7d0870aacfa828"
+  integrity sha512-AvZ4DdyCd60C+KdAGhl8NdiLrDliuF0RCRi3iABmTN0YXe4ECWJxOX3bqgsgsWvB/AxF5p5rSgrm0a3ymEHhng==
 
 react-native-codegen@^0.69.2:
   version "0.69.2"

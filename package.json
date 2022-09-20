@@ -9,6 +9,7 @@
         "web": "expo start --web"
     },
     "dependencies": {
+        "@expo-google-fonts/josefin-sans": "^0.2.2",
         "@expo-google-fonts/roboto": "^0.2.2",
         "@expo/webpack-config": "^0.17.0",
         "@ishikawa-masashi/react-joystick": "^0.0.9",
@@ -37,6 +38,7 @@
         "react-dom": "18.0.0",
         "react-joystick-component": "^4.0.1",
         "react-native": "0.69.5",
+        "react-native-actions-sheet": "^0.8.7",
         "react-native-confetti-cannon": "^1.5.2",
         "react-native-deck-swiper": "^2.0.8",
         "react-native-draggable": "^3.3.0",

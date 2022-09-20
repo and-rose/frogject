@@ -33,7 +33,7 @@ export default function SplashScreen() {
                     style={{
                         color: MD2Colors.green700,
                         textTransform: 'uppercase',
-                        fontFamily: 'Roboto_400Regular',
+                        fontFamily: 'JosefinSans_400Regular',
                         letterSpacing: 1.5,
                         opacity: 0.2,
                     }}

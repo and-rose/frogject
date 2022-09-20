@@ -43,7 +43,13 @@ export function ChatListScreen({ route, navigation }: Props) {
                         left={() => (
                             <Avatar.Text
                                 size={65}
-                                style={{ alignSelf: 'center', marginLeft: 10, marginRight: 10 }}
+                                color={theme.colors.background}
+                                style={{
+                                    alignSelf: 'center',
+                                    marginLeft: 10,
+                                    marginRight: 10,
+                                    backgroundColor: theme.colors.secondary,
+                                }}
                                 label={getInitials(rowData.item.data.name)}
                             />
                         )}

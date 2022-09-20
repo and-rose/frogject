@@ -1,4 +1,4 @@
-import { Roboto_400Regular, useFonts } from '@expo-google-fonts/roboto';
+import { JosefinSans_400Regular, useFonts } from '@expo-google-fonts/josefin-sans';
 import React from 'react';
 import { Provider as PaperProvider } from 'react-native-paper';
 
@@ -7,7 +7,7 @@ import Navigation from './src/navigation/Navigation';
 
 export default function App() {
     const [fontsLoaded] = useFonts({
-        Roboto_400Regular,
+        JosefinSans_400Regular,
     });
 
     if (!fontsLoaded) {

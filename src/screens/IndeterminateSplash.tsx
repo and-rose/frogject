@@ -31,7 +31,7 @@ const IndeterminateSplash = (props: any) => {
                 style={{
                     color: theme.colors.primary,
                     textTransform: 'uppercase',
-                    fontFamily: 'Roboto_400Regular',
+                    fontFamily: 'JosefinSans_400Regular',
                     letterSpacing: 1.5,
                 }}
                 variant={'headlineLarge'}>

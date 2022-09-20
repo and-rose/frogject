@@ -32,7 +32,7 @@ export default function SeekScreen() {
                     stackSeparation={0}
                     stackScale={2}
                     renderCard={data => {
-                        return <SeekProfileCard profileData={data} />;
+                        return <SeekProfileCard profileData={data} swiperRef={swiperRef} />;
                     }}
                     overlayLabels={{
                         left: {
@@ -74,26 +74,6 @@ export default function SeekScreen() {
                     }}
                 />
             </View>
-            <View style={styles.containerAlt}>
-                <IconButton
-                    icon="close"
-                    mode="contained"
-                    iconColor={theme.colors.error}
-                    size={50}
-                    onPress={() => {
-                        swiperRef.current?.swipeLeft();
-                    }}
-                />
-                <IconButton
-                    icon="heart"
-                    mode="contained"
-                    iconColor={theme.colors.success}
-                    size={50}
-                    onPress={() => {
-                        swiperRef.current?.swipeRight();
-                    }}
-                />
-            </View>
         </>
     );
 }
@@ -101,11 +81,5 @@ export default function SeekScreen() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-    },
-    containerAlt: {
-        flex: 0.15,
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-evenly',
     },
 });

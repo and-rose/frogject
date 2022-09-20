@@ -5,6 +5,7 @@
         "bycedric.vscode-expo",
         "eamodio.gitlens",
         "esbenp.prettier-vscode",
-        "rbbit.typescript-hero"
+        "rbbit.typescript-hero",
+        "kamikillerto.vscode-colorize"
     ]
 }
