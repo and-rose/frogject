@@ -1,12 +1,18 @@
 import { TabActionHelpers, useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Card, Text, TouchableRipple } from 'react-native-paper';
 
 import { HomeStackParams } from '../navigation/BottomTabs';
+import { RootStackParamList } from '../navigation/Navigation';
 
-export default function SelectionCard(props: { title: string; route?: keyof HomeStackParams }) {
-    const navigation = useNavigation<TabActionHelpers<HomeStackParams>>();
+export default function SelectionCard(props: {
+    title: string;
+    route?: keyof HomeStackParams | keyof RootStackParamList;
+}) {
+    const tabNavigation = useNavigation<TabActionHelpers<HomeStackParams>>();
+    const stackNavigation = useNavigation<StackNavigationProp<RootStackParamList>>();
 
     return (
         <TouchableRipple onPress={() => {}}>
@@ -15,8 +21,10 @@ export default function SelectionCard(props: { title: string; route?: keyof Home
                     style={styles.card}
                     collapsable
                     onPress={() => {
-                        if (props.route) {
-                            navigation.jumpTo(props.route);
+                        if (props.route !== 'Rewards') {
+                            tabNavigation.jumpTo(props.route);
+                        } else {
+                            stackNavigation.navigate(props.route);
                         }
                     }}
                     mode="contained">
