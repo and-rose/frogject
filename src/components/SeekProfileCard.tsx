@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
     },
     card: {
         width: '100%',
-        height: '84%',
+        height: '83.5%',
         alignSelf: 'center',
         backgroundColor: 'white',
     },
