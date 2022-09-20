@@ -17,7 +17,7 @@ export const ChatTopTabs = () => {
 
     return (
         <Tab.Navigator>
-            <Tab.Screen name="Chat" component={ChatScreen} i />
+            <Tab.Screen name="Chat" component={ChatScreen} />
             <Tab.Screen
                 name="LiveReact"
                 component={LiveReactScreen}

@@ -1,7 +1,7 @@
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import React from 'react';
 import { View, Platform } from 'react-native';
-import { MD2Colors, Text, useTheme } from 'react-native-paper';
+import { Text, useTheme } from 'react-native-paper';
 import { SvgXml } from 'react-native-svg';
 
 import uuundulateShape from '../constants/svgShapes';
@@ -25,13 +25,12 @@ export default function SplashScreen() {
             )}
             <View
                 style={{
-                    backgroundColor: theme.colors.background,
                     padding: 15,
                     borderRadius: 50,
                 }}>
                 <Text
                     style={{
-                        color: MD2Colors.green700,
+                        color: theme.colors.secondary,
                         textTransform: 'uppercase',
                         fontFamily: 'JosefinSans_400Regular',
                         letterSpacing: 1.5,
@@ -42,7 +41,7 @@ export default function SplashScreen() {
                     <MaterialCommunityIcons
                         name="debug-step-over"
                         size={35}
-                        color={MD2Colors.green700}
+                        color={theme.colors.secondary}
                     />
                 </Text>
             </View>
