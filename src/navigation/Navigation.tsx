@@ -42,6 +42,10 @@ export default function Navigation() {
             <Stack.Navigator
                 initialRouteName="IndeterminateSplash"
                 screenOptions={{
+                    headerTitleStyle: {
+                        fontFamily: 'JosefinSans_400Regular',
+                        textTransform: 'uppercase',
+                    },
                     headerStyle: {
                         elevation: 0,
                         shadowOpacity: 0,
