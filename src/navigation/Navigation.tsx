@@ -10,9 +10,12 @@ import { Badge, IconButton, useTheme } from 'react-native-paper';
 import { ChatMoreMenu } from '../components/ChatReportMenu';
 import DebugScreen from '../screens/DebugScreen';
 import LiveReactScreen from '../screens/LiveReactScreen';
-import IndeterminateSplash from '../screens/Misc/IndeterminateSplash';
-import Splash from '../screens/Misc/Splash';
-import LoginScreen from '../screens/Onboarding/LoginScreen';
+import IndeterminateSplash from '../screens/misc/IndeterminateSplash';
+import Splash from '../screens/misc/Splash';
+import LoginScreen from '../screens/onboarding/LoginScreen';
+import RegistrationDetailsScreen from '../screens/onboarding/RegistrationDetailsScreen';
+import RegistrationScreen from '../screens/onboarding/RegistrationDetailsScreen';
+import RegistrationInterestsScreen from '../screens/onboarding/RegistrationInterestsScreen';
 import RewardsScreen from '../screens/RewardsScreen';
 import BottomTabs, { HomeStackParams } from './BottomTabs';
 import ChatTopTabs from './ChatTopTabs';
@@ -27,6 +30,8 @@ export type RootStackParamList = {
     Debug: undefined;
     Rewards: undefined;
     Login: undefined;
+    RegistrationDetails: undefined;
+    RegistrationInterests: undefined;
 };
 
 function getHeaderTitle(route: any) {
@@ -92,6 +97,22 @@ export default function Navigation() {
                     options={{
                         headerShown: false,
                         ...TransitionPresets.ScaleFromCenterAndroid,
+                    }}
+                />
+                <Stack.Screen
+                    name="RegistrationDetails"
+                    component={RegistrationDetailsScreen}
+                    options={{
+                        headerShown: false,
+                        ...TransitionPresets.SlideFromRightIOS,
+                    }}
+                />
+                <Stack.Screen
+                    name="RegistrationInterests"
+                    component={RegistrationInterestsScreen}
+                    options={{
+                        headerShown: false,
+                        ...TransitionPresets.SlideFromRightIOS,
                     }}
                 />
                 <Stack.Screen

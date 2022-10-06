@@ -5,7 +5,7 @@ import { useTheme } from 'react-native-paper';
 
 import { ChatListScreen } from '../screens/ChatListScreen';
 import HomeScreen from '../screens/HomeScreen';
-import SplashScreen from '../screens/Misc/Splash';
+import SplashScreen from '../screens/misc/Splash';
 import RewardsScreen from '../screens/RewardsScreen';
 import SeekScreen from '../screens/SeekScreen';
 

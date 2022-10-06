@@ -45,7 +45,7 @@ export default function LoginScreen({ navigation }: Props) {
                 <Button
                     mode="contained"
                     buttonColor={theme.colors.secondary}
-                    onPress={() => console.log('Pressed')}
+                    onPress={() => navigation.navigate('RegistrationDetails')}
                     style={{ marginTop: 20 }}
                     uppercase
                     contentStyle={{ paddingVertical: 10 }}
