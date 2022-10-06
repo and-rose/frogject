@@ -1,7 +1,8 @@
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import React from 'react';
-import { Image, ScrollView, View, StyleSheet, SafeAreaView } from 'react-native';
-import { Button, useTheme, Text, Appbar, TextInput, Avatar } from 'react-native-paper';
+import React, { useState } from 'react';
+import { ScrollView, StyleSheet, View } from 'react-native';
+import { Appbar, Avatar, Button, Text, TextInput, useTheme } from 'react-native-paper';
+import { DatePickerModal } from 'react-native-paper-dates';
 
 import { RootStackParamList } from '../../navigation/Navigation';
 
@@ -9,7 +10,12 @@ type Props = NativeStackScreenProps<RootStackParamList>;
 
 export default function RegistrationDetailsScreen({ navigation }: Props) {
     const theme = useTheme();
-    const [text, setText] = React.useState('');
+    const [name, setName] = useState('');
+    const [pronouns, setPronouns] = useState('');
+    const [dateOfBirth, setDateOfBirth] = useState('');
+    const [bio, setBio] = useState('');
+    const [date, setDate] = useState<Date | undefined>(undefined);
+    const [open, setOpen] = useState(false);
 
     return (
         <>
@@ -43,32 +49,32 @@ export default function RegistrationDetailsScreen({ navigation }: Props) {
                             <Text style={styles.entryText}>Name</Text>
                             <TextInput
                                 mode="outlined"
-                                value={text}
-                                onChangeText={text => setText(text)}
+                                value={name}
+                                onChangeText={text => setName(text)}
                             />
                         </View>
                         <View style={styles.entryBlock}>
                             <Text style={styles.entryText}>Pronouns</Text>
                             <TextInput
                                 mode="outlined"
-                                value={text}
-                                onChangeText={text => setText(text)}
+                                value={pronouns}
+                                onChangeText={text => setPronouns(text)}
                             />
                         </View>
                         <View style={styles.entryBlock}>
                             <Text style={styles.entryText}>Date of Birth</Text>
                             <TextInput
                                 mode="outlined"
-                                value={text}
-                                onChangeText={text => setText(text)}
+                                value={dateOfBirth}
+                                onChangeText={text => setDateOfBirth(text)}
                             />
                         </View>
                         <View style={styles.entryBlock}>
                             <Text style={styles.entryText}>About Me</Text>
                             <TextInput
                                 mode="outlined"
-                                value={text}
-                                onChangeText={text => setText(text)}
+                                value={bio}
+                                onChangeText={text => setBio(text)}
                             />
                         </View>
                     </View>

@@ -1,16 +1,19 @@
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import React from 'react';
-import { Image, ScrollView, View, StyleSheet, SafeAreaView } from 'react-native';
-import { Button, useTheme, Text, Appbar, TextInput, Avatar } from 'react-native-paper';
-import { ChipSet } from '../../components/ChipSet';
+import React, { useState } from 'react';
+import { ScrollView, StyleSheet, View } from 'react-native';
+import { Appbar, Button, Text, useTheme } from 'react-native-paper';
 
+import { ChipSet } from '../../components/ChipSet';
 import { RootStackParamList } from '../../navigation/Navigation';
 
 type Props = NativeStackScreenProps<RootStackParamList>;
 
 export default function RegistrationInterestsScreen({ navigation }: Props) {
     const theme = useTheme();
-    const [text, setText] = React.useState('');
+    const [role, setRole] = useState(-1);
+    const [rank, setRank] = useState(-1);
+    const [server, setServer] = useState(-1);
+    const [interests, setInterests] = useState(-1);
 
     return (
         <>
@@ -37,31 +40,52 @@ export default function RegistrationInterestsScreen({ navigation }: Props) {
                         </Text>
 
                         <View style={styles.entryBlock}>
-                            <Text style={styles.entryText}>Name</Text>
-                            <ChipSet data={['one', 'two', 'three', 'four', 'five', 'six']} />
-                        </View>
-                        <View style={styles.entryBlock}>
-                            <Text style={styles.entryText}>Pronouns</Text>
-                            <ChipSet data={['one', 'two', 'three', 'elevent', 'sixteen']} />
-                        </View>
-                        <View style={styles.entryBlock}>
-                            <Text style={styles.entryText}>Date of Birth</Text>
+                            <Text style={styles.entryText}>Role</Text>
                             <ChipSet
-                                data={['one', 'two', 'three', 'forty', 'hundred', 'thousand']}
+                                data={['Sentinel', 'Duelist', 'Initiator', 'Controller']}
+                                selectedIndex={role}
+                                setIndex={setRole}
                             />
                         </View>
                         <View style={styles.entryBlock}>
-                            <Text style={styles.entryText}>About Me</Text>
+                            <Text style={styles.entryText}>Rank</Text>
                             <ChipSet
                                 data={[
-                                    'one',
-                                    'two',
-                                    'three',
-                                    'words',
-                                    'more words',
-                                    'less words',
-                                    'psyche',
+                                    'Iron',
+                                    'Bronze',
+                                    'Silver',
+                                    'Gold',
+                                    'Platinum',
+                                    'Diamond',
+                                    'Ascendant',
+                                    'Immortal',
+                                    'Radiant',
                                 ]}
+                                selectedIndex={rank}
+                                setIndex={setRank}
+                            />
+                        </View>
+                        <View style={styles.entryBlock}>
+                            <Text style={styles.entryText}>Server</Text>
+                            <ChipSet
+                                data={[
+                                    'North America',
+                                    'Latin America',
+                                    'Brazil',
+                                    'Europe',
+                                    'Asia Pacific',
+                                    'Korea',
+                                ]}
+                                selectedIndex={server}
+                                setIndex={setServer}
+                            />
+                        </View>
+                        <View style={styles.entryBlock}>
+                            <Text style={styles.entryText}>Interests</Text>
+                            <ChipSet
+                                data={['Film', 'TV', 'Books', 'Food', 'Sport', 'Art']}
+                                selectedIndex={interests}
+                                setIndex={setInterests}
                             />
                         </View>
                     </View>

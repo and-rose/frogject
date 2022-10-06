@@ -2,6 +2,7 @@ import {
     getFocusedRouteNameFromRoute,
     NavigationContainer,
     NavigatorScreenParams,
+    RouteProp,
 } from '@react-navigation/native';
 import { createStackNavigator, TransitionPresets } from '@react-navigation/stack';
 import React from 'react';
@@ -14,7 +15,6 @@ import IndeterminateSplash from '../screens/misc/IndeterminateSplash';
 import Splash from '../screens/misc/Splash';
 import LoginScreen from '../screens/onboarding/LoginScreen';
 import RegistrationDetailsScreen from '../screens/onboarding/RegistrationDetailsScreen';
-import RegistrationScreen from '../screens/onboarding/RegistrationDetailsScreen';
 import RegistrationInterestsScreen from '../screens/onboarding/RegistrationInterestsScreen';
 import RewardsScreen from '../screens/RewardsScreen';
 import BottomTabs, { HomeStackParams } from './BottomTabs';
@@ -34,7 +34,7 @@ export type RootStackParamList = {
     RegistrationInterests: undefined;
 };
 
-function getHeaderTitle(route: any) {
+function getHeaderTitle(route: RouteProp<RootStackParamList>) {
     // If the focused route is not found, we need to assume it's the initial screen
     // This can happen during if there hasn't been any navigation inside the screen
 

@@ -3,7 +3,11 @@ import { Chip, useTheme } from 'react-native-paper';
 
 type emphasisStyle = 'none' | 'unfocused' | 'focused';
 
-export function REGROUPChip(props: { text: string; emphasis: emphasisStyle }) {
+export function REGROUPChip(props: {
+    text: string;
+    emphasis: emphasisStyle;
+    onPress?: () => void;
+}) {
     const theme = useTheme();
 
     function getBackgroundColor(emphasis: emphasisStyle) {
@@ -36,6 +40,7 @@ export function REGROUPChip(props: { text: string; emphasis: emphasisStyle }) {
                 marginVertical: 5,
                 borderRadius: 20,
             }}
+            onPress={props.onPress}
             textStyle={{
                 color: getColor(props.emphasis),
                 textTransform: 'uppercase',

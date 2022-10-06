@@ -1,6 +1,9 @@
 import { JosefinSans_400Regular, useFonts } from '@expo-google-fonts/josefin-sans';
 import React from 'react';
 import { Provider as PaperProvider } from 'react-native-paper';
+import { enGB, registerTranslation } from 'react-native-paper-dates';
+
+registerTranslation('en-GB', enGB);
 
 import LeaperTheme from './src/constants/theme';
 import Navigation from './src/navigation/Navigation';
