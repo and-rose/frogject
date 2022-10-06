@@ -3,10 +3,14 @@ import { SafeAreaView } from 'react-native';
 import { StyleSheet } from 'react-native';
 import * as Haptics from 'expo-haptics';
 import { Button, Dialog, List, Paragraph, Portal } from 'react-native-paper';
+import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from '../navigation/Navigation';
 
 export default function DebugScreen() {
     const [visible, setVisible] = React.useState(false);
     const hideDialog = () => setVisible(false);
+    const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
 
     return (
         <SafeAreaView>
@@ -31,6 +35,13 @@ export default function DebugScreen() {
                     left={() => <List.Icon icon="alert" />}
                     onPress={() => {
                         setVisible(true);
+                    }}
+                />
+                <List.Item
+                    title="Logout"
+                    left={() => <List.Icon icon="logout" />}
+                    onPress={() => {
+                        navigation.replace('Login');
                     }}
                 />
             </List.Section>

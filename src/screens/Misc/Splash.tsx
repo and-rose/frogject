@@ -3,8 +3,7 @@ import React from 'react';
 import { View, Platform } from 'react-native';
 import { Text, useTheme } from 'react-native-paper';
 import { SvgXml } from 'react-native-svg';
-
-import uuundulateShape from '../constants/svgShapes';
+import uuundulateShape from '../../constants/svgShapes';
 
 export default function SplashScreen() {
     const theme = useTheme();

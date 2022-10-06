@@ -3,19 +3,19 @@ import React, { useEffect, useState } from 'react';
 import { View } from 'react-native';
 import { ProgressBar, Text, useTheme } from 'react-native-paper';
 
-const IndeterminateSplash = (props: any) => {
+const IndeterminateSplash = (props: { navigation: any }) => {
     const [appIsReady, setAppIsReady] = useState(false);
     const theme = useTheme();
 
     useEffect(() => {
         setTimeout(() => {
             setAppIsReady(true);
-        }, 1);
+        }, 1000);
     }, []);
 
     useEffect(() => {
         if (appIsReady) {
-            props.navigation.replace('REGROUP');
+            props.navigation.replace('Login');
         }
     }, [appIsReady, props.navigation]);
 

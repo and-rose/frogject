@@ -5,9 +5,9 @@ import { useTheme } from 'react-native-paper';
 
 import { ChatListScreen } from '../screens/ChatListScreen';
 import HomeScreen from '../screens/HomeScreen';
+import SplashScreen from '../screens/Misc/Splash';
 import RewardsScreen from '../screens/RewardsScreen';
 import SeekScreen from '../screens/SeekScreen';
-import SplashScreen from '../screens/Splash';
 
 export type HomeStackParams = {
     Home: undefined;
@@ -25,6 +25,9 @@ export const BottomTabs = () => {
     return (
         <Tab.Navigator
             initialRouteName="Home"
+            barStyle={{
+                backgroundColor: theme.colors.backgroundVariant,
+            }}
             shifting
             sceneAnimationEnabled
             sceneAnimationType="shifting"

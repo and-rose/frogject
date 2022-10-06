@@ -1,21 +1,22 @@
-import React, { useState } from 'react';
-import { View, StyleSheet, TouchableOpacity } from 'react-native';
-import { Avatar, List, Text, useTheme } from 'react-native-paper';
-import { chatsData as rawChatData } from '../constants/sampleData';
+import { FontAwesome } from '@expo/vector-icons';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import TimeAgo from 'javascript-time-ago';
 import en from 'javascript-time-ago/locale/en';
-import { getInitials } from '../utils/stringUtils';
-import { FontAwesome } from '@expo/vector-icons';
+import React, { useState } from 'react';
+import { StyleSheet, TouchableOpacity, View } from 'react-native';
+import { Avatar, List, Text, useTheme } from 'react-native-paper';
 import { SwipeListView } from 'react-native-swipe-list-view';
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { RootStackParamList } from '../navigation/Navigation';
+
+import { chatsData as rawChatData } from '../constants/sampleData';
 import LeaperTheme from '../constants/theme';
+import { RootStackParamList } from '../navigation/Navigation';
+import { getInitials } from '../utils/stringUtils';
 
 TimeAgo.addLocale(en);
 
 type Props = NativeStackScreenProps<RootStackParamList>;
 
-export function ChatListScreen({ route, navigation }: Props) {
+export function ChatListScreen({ navigation }: Props) {
     const theme = useTheme();
     const timeAgo = new TimeAgo('en-US');
     const [chatsData, setChatsData] = useState(
@@ -27,7 +28,7 @@ export function ChatListScreen({ route, navigation }: Props) {
             <SwipeListView
                 useFlatList={true}
                 data={chatsData}
-                renderItem={(rowData, rowMap) => (
+                renderItem={rowData => (
                     <List.Item
                         title={rowData.item.data.name}
                         style={{ backgroundColor: theme.colors.background }}

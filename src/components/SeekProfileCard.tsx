@@ -1,7 +1,8 @@
-import * as React from 'react';
-import { ScrollView, View, StyleSheet, ImageBackground } from 'react-native';
-import { Chip, Divider, IconButton, Text, useTheme } from 'react-native-paper';
 import { LoremIpsum } from 'lorem-ipsum';
+import * as React from 'react';
+import { ImageBackground, ScrollView, StyleSheet, View } from 'react-native';
+import { Divider, IconButton, Text, useTheme } from 'react-native-paper';
+
 import { infoData, shortInfoData } from '../constants/sampleData';
 import { REGROUPChip } from './REGROUPChip';
 

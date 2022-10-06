@@ -17,6 +17,7 @@ const LeaperTheme = {
         error: '#C52F2F',
         unfocused: '#D9D9D9',
         background: '#FFFFFF',
+        backgroundVariant: '#EBEEFF',
     },
 };
 

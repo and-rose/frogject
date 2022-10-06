@@ -5,16 +5,15 @@ import {
 } from '@react-navigation/native';
 import { createStackNavigator, TransitionPresets } from '@react-navigation/stack';
 import React from 'react';
-import { Badge, IconButton } from 'react-native-paper';
-import { ChatMoreMenu } from '../components/ChatReportMenu';
-import LeaperTheme from '../constants/theme';
+import { Badge, IconButton, useTheme } from 'react-native-paper';
 
-import { ChatScreen } from '../screens/ChatScreen';
+import { ChatMoreMenu } from '../components/ChatReportMenu';
 import DebugScreen from '../screens/DebugScreen';
-import IndeterminateSplash from '../screens/IndeterminateSplash';
 import LiveReactScreen from '../screens/LiveReactScreen';
+import IndeterminateSplash from '../screens/Misc/IndeterminateSplash';
+import Splash from '../screens/Misc/Splash';
+import LoginScreen from '../screens/Onboarding/LoginScreen';
 import RewardsScreen from '../screens/RewardsScreen';
-import Splash from '../screens/Splash';
 import BottomTabs, { HomeStackParams } from './BottomTabs';
 import ChatTopTabs from './ChatTopTabs';
 
@@ -27,6 +26,7 @@ export type RootStackParamList = {
     ChatTopTabs: { name: string };
     Debug: undefined;
     Rewards: undefined;
+    Login: undefined;
 };
 
 function getHeaderTitle(route: any) {
@@ -37,6 +37,7 @@ function getHeaderTitle(route: any) {
 }
 
 export default function Navigation() {
+    const theme = useTheme();
     const Stack = createStackNavigator<RootStackParamList>();
 
     return (
@@ -53,6 +54,7 @@ export default function Navigation() {
                         elevation: 0,
                         shadowOpacity: 0,
                         borderBottomWidth: 0,
+                        backgroundColor: theme.colors.backgroundVariant,
                     },
                 }}>
                 <Stack.Screen
@@ -87,6 +89,14 @@ export default function Navigation() {
                 <Stack.Screen
                     name="Splash"
                     component={Splash}
+                    options={{
+                        headerShown: false,
+                        ...TransitionPresets.ScaleFromCenterAndroid,
+                    }}
+                />
+                <Stack.Screen
+                    name="Login"
+                    component={LoginScreen}
                     options={{
                         headerShown: false,
                         ...TransitionPresets.ScaleFromCenterAndroid,
