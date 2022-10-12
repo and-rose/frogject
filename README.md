@@ -1,4 +1,4 @@
-# RE:GROUP
+# Welcome to the Frogject
 
 ## Installing dependencies
 
