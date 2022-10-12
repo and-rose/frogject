@@ -51,7 +51,7 @@ export default function RegistrationDetailsScreen({ navigation }: Props) {
                 contentContainerStyle={{
                     alignContent: 'center',
                 }}>
-                <View style={{ margin: 25 }}>
+                <View style={{ margin: 25, flex: 1 }}>
                     <View style={{ alignContent: 'center' }}>
                         <Text
                             variant="titleMedium"
@@ -107,7 +107,7 @@ export default function RegistrationDetailsScreen({ navigation }: Props) {
                     <Button
                         mode="contained"
                         onPress={() => navigation.navigate('RegistrationInterests')}
-                        style={{ marginTop: 20, width: 150, alignSelf: 'center' }}
+                        style={{ marginTop: 20, alignSelf: 'center' }}
                         uppercase
                         labelStyle={{
                             fontSize: 16,
@@ -136,6 +136,7 @@ const styles = StyleSheet.create({
     },
     entryText: {
         marginVertical: 5,
+        fontFamily: 'JosefinSans_400Regular',
         textTransform: 'uppercase',
     },
 });

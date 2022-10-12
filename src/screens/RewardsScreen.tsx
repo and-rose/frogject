@@ -166,9 +166,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     endorsementCardTitle: {
-        fontFamily: 'JosefinSans_400Regular',
+        fontFamily: 'JosefinSans_700Bold',
         fontSize: 10,
-        fontWeight: 'bold',
         textTransform: 'uppercase',
         textAlign: 'center',
     },

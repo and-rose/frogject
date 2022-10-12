@@ -64,9 +64,8 @@ const styles = StyleSheet.create({
         marginVertical: 10,
     },
     cardTitleText: {
-        fontFamily: 'JosefinSans_400Regular',
+        fontFamily: 'JosefinSans_700Bold',
         fontSize: 20,
-        fontWeight: 'bold',
     },
     cardTitleView: {
         justifyContent: 'flex-end',

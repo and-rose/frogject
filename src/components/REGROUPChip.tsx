@@ -1,4 +1,5 @@
 import React from 'react';
+import { View } from 'react-native';
 import { Chip, useTheme } from 'react-native-paper';
 
 type emphasisStyle = 'none' | 'unfocused' | 'focused';
@@ -33,19 +34,21 @@ export function REGROUPChip(props: {
     }
 
     return (
-        <Chip
-            style={{
-                backgroundColor: getBackgroundColor(props.emphasis),
-                marginRight: 10,
-                marginVertical: 5,
-                borderRadius: 20,
-            }}
-            onPress={props.onPress}
-            textStyle={{
-                color: getColor(props.emphasis),
-                textTransform: 'uppercase',
-            }}>
-            {props.text}
-        </Chip>
+        <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start' }}>
+            <Chip
+                style={{
+                    backgroundColor: getBackgroundColor(props.emphasis),
+                    marginRight: 10,
+                    marginVertical: 5,
+                    borderRadius: 20,
+                }}
+                onPress={props.onPress}
+                textStyle={{
+                    color: getColor(props.emphasis),
+                    textTransform: 'uppercase',
+                }}>
+                {props.text}
+            </Chip>
+        </View>
     );
 }

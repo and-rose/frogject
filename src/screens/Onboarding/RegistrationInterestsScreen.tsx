@@ -31,7 +31,7 @@ export default function RegistrationInterestsScreen({ navigation }: Props) {
                 contentContainerStyle={{
                     alignContent: 'center',
                 }}>
-                <View style={{ margin: 25 }}>
+                <View style={{ margin: 25, flex: 1 }}>
                     <View style={{ alignContent: 'center' }}>
                         <Text
                             variant="titleMedium"
@@ -92,7 +92,7 @@ export default function RegistrationInterestsScreen({ navigation }: Props) {
                     <Button
                         mode="contained"
                         onPress={() => navigation.replace('REGROUP', { screen: 'Home' })}
-                        style={{ marginTop: 20, width: 150, alignSelf: 'center' }}
+                        style={{ marginTop: 20, alignSelf: 'center' }}
                         uppercase
                         labelStyle={{
                             fontSize: 16,

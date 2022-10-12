@@ -1,4 +1,8 @@
-import { JosefinSans_400Regular, useFonts } from '@expo-google-fonts/josefin-sans';
+import {
+    JosefinSans_400Regular,
+    JosefinSans_700Bold,
+    useFonts,
+} from '@expo-google-fonts/josefin-sans';
 import React from 'react';
 import { Provider as PaperProvider } from 'react-native-paper';
 import { enGB, registerTranslation } from 'react-native-paper-dates';
@@ -11,6 +15,7 @@ import Navigation from './src/navigation/Navigation';
 export default function App() {
     const [fontsLoaded] = useFonts({
         JosefinSans_400Regular,
+        JosefinSans_700Bold,
     });
 
     if (!fontsLoaded) {
