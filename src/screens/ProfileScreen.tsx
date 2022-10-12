@@ -1,0 +1,94 @@
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import React, { useState } from 'react';
+import { ScrollView, StyleSheet, View } from 'react-native';
+import { Appbar, Avatar, Button, Text, TextInput, useTheme } from 'react-native-paper';
+import { RootStackParamList } from '../navigation/Navigation';
+
+type Props = NativeStackScreenProps<RootStackParamList>;
+
+export default function ProfileScreen({ navigation }: Props) {
+    const theme = useTheme();
+    const [name, setName] = useState('');
+    const [pronouns, setPronouns] = useState('');
+    const [dateOfBirth, setDateOfBirth] = useState('');
+    const [bio, setBio] = useState('');
+    const [date, setDate] = useState<Date | undefined>(undefined);
+    const [open, setOpen] = useState(false);
+
+    return (
+        <ScrollView
+            contentContainerStyle={{
+                alignContent: 'center',
+            }}>
+            <View style={{ margin: 25 }}>
+                <View style={{ alignContent: 'center' }}>
+                    <Text
+                        variant="titleMedium"
+                        style={{ textTransform: 'uppercase', alignSelf: 'center' }}>
+                        Tell us about yourself
+                    </Text>
+                    <Avatar.Icon
+                        size={175}
+                        icon="camera"
+                        style={{ margin: 30, alignSelf: 'center' }}
+                    />
+                    <View style={styles.entryBlock}>
+                        <Text style={styles.entryText}>Name</Text>
+                        <TextInput
+                            mode="outlined"
+                            value={name}
+                            onChangeText={text => setName(text)}
+                        />
+                    </View>
+                    <View style={styles.entryBlock}>
+                        <Text style={styles.entryText}>Pronouns</Text>
+                        <TextInput
+                            mode="outlined"
+                            value={pronouns}
+                            onChangeText={text => setPronouns(text)}
+                        />
+                    </View>
+                    <View style={styles.entryBlock}>
+                        <Text style={styles.entryText}>Date of Birth</Text>
+                        <TextInput
+                            mode="outlined"
+                            value={dateOfBirth}
+                            onChangeText={text => setDateOfBirth(text)}
+                        />
+                    </View>
+                    <View style={styles.entryBlock}>
+                        <Text style={styles.entryText}>About Me</Text>
+                        <TextInput
+                            mode="outlined"
+                            value={bio}
+                            style={{ height: 100 }}
+                            multiline={true}
+                            onChangeText={text => setBio(text)}
+                        />
+                    </View>
+                </View>
+                <Button
+                    mode="contained"
+                    onPress={() => navigation.navigate('RegistrationInterests')}
+                    style={{ marginTop: 20, width: 150, alignSelf: 'center' }}
+                    uppercase
+                    labelStyle={{
+                        fontSize: 16,
+                        fontFamily: 'JosefinSans_400Regular',
+                    }}>
+                    Next
+                </Button>
+            </View>
+        </ScrollView>
+    );
+}
+
+const styles = StyleSheet.create({
+    entryBlock: {
+        marginTop: 10,
+    },
+    entryText: {
+        marginVertical: 5,
+        textTransform: 'uppercase',
+    },
+});

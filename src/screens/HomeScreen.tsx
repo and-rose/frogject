@@ -8,7 +8,9 @@ export default function HomeScreen() {
     return (
         <View style={styles.container}>
             {homeCardsData.map((card, index) => {
-                return <SelectionCard title={card.title} route={card.route} key={index} />;
+                return (
+                    <SelectionCard title={card.title} route={card.route} key={index} clickable />
+                );
             })}
         </View>
     );

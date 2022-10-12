@@ -1,3 +1,4 @@
+import { IconProps } from 'react-native-vector-icons/Icon';
 import { HomeStackParams } from '../navigation/BottomTabs';
 
 export const chatsData = [
@@ -160,7 +161,7 @@ export const homeCardsData: { title: string; route: keyof HomeStackParams }[] = 
 export const infoData = ['Male', 'Oceania', '18-30', 'Valorant', 'Casual'];
 export const shortInfoData = ['Sentinel', 'Silver'];
 
-export const tiers = ['Tier 1', 'Tier 2', 'Tier 3'];
+export const tiers = ['Tier 1 - Clutched Up', 'Tier 2 - MVP', 'Tier 3 - Good Sportsmanship'];
 
 export const rewardsProgress = {
     endorsementProgress: 700,
@@ -169,22 +170,15 @@ export const rewardsProgress = {
         mostValuablePlayer: 0,
         clutchedUp: 0,
     },
-    availableRewards: [
-        "Gun Buddy",
-        "Spray",
-        "Player Card",
-        "Title",
-        "Weapon Skin",
-        "Player Icon",
-    ]
-}
+    availableRewards: ['Gun Buddy', 'Spray', 'Player Card', 'Title', 'Weapon Skin', 'Player Icon'],
+};
 
 export type EndorsementDetails = {
     type: string;
     title: string;
     description: string;
-    icon: 'hand-clap' | 'trophy' | 'medal';
-}
+    icon: string;
+};
 
 export const endorsementTypes = [
     {

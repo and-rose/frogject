@@ -31,21 +31,6 @@ const IndeterminateSplash = (props: { navigation: any }) => {
                 <Text
                     style={{
                         color: theme.colors.primary,
-                        textTransform: 'uppercase',
-                        fontFamily: 'JosefinSans_400Regular',
-                        letterSpacing: 1.5,
-                    }}
-                    variant={'headlineLarge'}>
-                    RE:GROUP
-                    <MaterialCommunityIcons
-                        name="debug-step-over"
-                        size={35}
-                        color={theme.colors.primary}
-                    />
-                </Text>
-                <Text
-                    style={{
-                        color: theme.colors.primary,
                         marginVertical: 70,
                         textTransform: 'uppercase',
                         fontFamily: 'JosefinSans_400Regular',

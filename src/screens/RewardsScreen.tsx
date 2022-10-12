@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, ScrollView } from 'react-native';
-import { Text, ProgressBar, useTheme, Card, Title, Badge } from 'react-native-paper';
+import { Text, ProgressBar, useTheme, Card, Badge } from 'react-native-paper';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import SelectionCard from '../components/SelectionCard';
@@ -17,7 +17,9 @@ function EndorsementCard(props: { endorsement: EndorsementDetails; count: number
 
     return (
         <View>
-            <Badge>{props.count}</Badge>
+            <Badge style={[styles.badge, { backgroundColor: theme.colors.primary }]} size={25}>
+                {props.count}
+            </Badge>
             <View
                 style={[
                     styles.endorsementCard,
@@ -47,7 +49,7 @@ function RewardCard(props: { rewardName: string }) {
     return (
         <Card style={[styles.rewardsCard, { backgroundColor: theme.colors.tertiary }]}>
             {/* <Card.Title title="Card Title" subtitle="Card Subtitle" /> */}
-            <Card.Content>
+            <Card.Content style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
                 <Text style={styles.endorsementCardTitle}>{rewardName}</Text>
             </Card.Content>
         </Card>
@@ -62,12 +64,17 @@ export default function RewardsScreen() {
         <ScrollView
             contentContainerStyle={{
                 alignContent: 'center',
+                backgroundColor: theme.colors.background,
             }}>
             <View style={{ margin: 25 }}>
                 <View style={{ alignContent: 'center' }}>
                     <Text
-                        variant="titleMedium"
-                        style={{ textTransform: 'uppercase', marginBottom: 10 }}>
+                        variant="titleLarge"
+                        style={{
+                            textTransform: 'uppercase',
+                            marginBottom: 10,
+                            fontFamily: 'JosefinSans_400Regular',
+                        }}>
                         Tier 2
                     </Text>
                     <Text style={styles.entryText}>Endorsement Progress</Text>
@@ -79,13 +86,12 @@ export default function RewardsScreen() {
                     <View style={styles.entryBlock}>
                         <Text style={styles.entryText}>My Endorsements</Text>
                         <View style={{ paddingLeft: 2, flexDirection: 'row' }}>
-                            {endorsementTypes.map(endorsement => (
-                                <>
-                                    <EndorsementCard
-                                        endorsement={endorsement}
-                                        count={rewards.endorsementsCounts.clutchedUp}
-                                    />
-                                </>
+                            {endorsementTypes.map((endorsement, index) => (
+                                <EndorsementCard
+                                    endorsement={endorsement}
+                                    count={rewards.endorsementsCounts.clutchedUp}
+                                    key={index}
+                                />
                             ))}
                         </View>
                     </View>
@@ -93,18 +99,18 @@ export default function RewardsScreen() {
                         <Text style={styles.entryText}>My Rewards</Text>
                         <ScrollView
                             horizontal
-                            contentContainerStyle={{ paddingLeft: 2, padding: 20 }}>
-                            {rewards.availableRewards.map(name => (
-                                <RewardCard rewardName={name} />
+                            contentContainerStyle={{ paddingLeft: 2, paddingVertical: 20 }}>
+                            {rewards.availableRewards.map((name, index) => (
+                                <RewardCard rewardName={name} key={index} />
                             ))}
                         </ScrollView>
                     </View>
                 </View>
                 <View style={styles.entryBlock}>
-                    <Text style={styles.entryText}>My Rewards</Text>
+                    <Text style={styles.entryText}>Monthly Rewards</Text>
                     <View style={styles.container}>
                         {tiers.map((card, index) => {
-                            return <SelectionCard title={card} key={index} />;
+                            return <SelectionCard title={card} key={index} fontSize={18} />;
                         })}
                     </View>
                 </View>
@@ -125,6 +131,7 @@ const styles = StyleSheet.create({
     entryText: {
         marginVertical: 5,
         textTransform: 'uppercase',
+        fontFamily: 'JosefinSans_400Regular',
     },
     endorsementCard: {
         backgroundColor: '#fff',
@@ -143,6 +150,12 @@ const styles = StyleSheet.create({
             height: 2,
         },
     },
+    badge: {
+        position: 'absolute',
+        top: 0,
+        right: 0,
+        zIndex: 1,
+    },
     endorsementCardHeader: {
         borderBottomEndRadius: 6,
         borderBottomStartRadius: 6,
@@ -153,14 +166,14 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     endorsementCardTitle: {
+        fontFamily: 'JosefinSans_400Regular',
         fontSize: 10,
         fontWeight: 'bold',
         textTransform: 'uppercase',
         textAlign: 'center',
-        textAlignVertical: 'center',
-        alignSelf: 'center',
     },
     rewardsCard: {
+        flex: 1,
         marginRight: 10,
         height: 110,
         width: 80,

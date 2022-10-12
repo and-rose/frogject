@@ -5,8 +5,7 @@ import { useTheme } from 'react-native-paper';
 
 import { ChatListScreen } from '../screens/ChatListScreen';
 import HomeScreen from '../screens/HomeScreen';
-import SplashScreen from '../screens/misc/Splash';
-import RewardsScreen from '../screens/RewardsScreen';
+import ProfileScreen from '../screens/ProfileScreen';
 import SeekScreen from '../screens/SeekScreen';
 
 export type HomeStackParams = {
@@ -49,7 +48,7 @@ export const BottomTabs = () => {
             />
             <Tab.Screen
                 name="Profile"
-                component={SplashScreen}
+                component={ProfileScreen}
                 options={{
                     tabBarIcon: ({ focused, color }) => {
                         return (

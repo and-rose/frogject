@@ -1,8 +1,8 @@
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import React, { useState } from 'react';
-import { ScrollView, StyleSheet, View } from 'react-native';
+import { Platform, ScrollView, StyleSheet, View } from 'react-native';
 import { Appbar, Avatar, Button, Text, TextInput, useTheme } from 'react-native-paper';
-import { DatePickerModal } from 'react-native-paper-dates';
+import DateTimePicker from '@react-native-community/datetimepicker';
 
 import { RootStackParamList } from '../../navigation/Navigation';
 
@@ -16,6 +16,24 @@ export default function RegistrationDetailsScreen({ navigation }: Props) {
     const [bio, setBio] = useState('');
     const [date, setDate] = useState<Date | undefined>(undefined);
     const [open, setOpen] = useState(false);
+    const [mode, setMode] = useState('date');
+
+    const showMode = (currentMode: any) => {
+        setOpen(true);
+        setMode(currentMode);
+    };
+
+    const onChange = (event: any, selectedDate: any) => {
+        const currentDate = selectedDate || date;
+        setOpen(Platform.OS === 'ios');
+        setDate(currentDate);
+
+        const tempDate = new Date(currentDate);
+        const fDate = tempDate.getMonth() + '/' + tempDate.getDate() + '/' + tempDate.getFullYear();
+        setDateOfBirth(fDate);
+
+        console.log('date of birth: ' + dateOfBirth);
+    };
 
     return (
         <>
@@ -66,6 +84,12 @@ export default function RegistrationDetailsScreen({ navigation }: Props) {
                             <TextInput
                                 mode="outlined"
                                 value={dateOfBirth}
+                                right={
+                                    <TextInput.Icon
+                                        icon="calendar"
+                                        onPress={() => showMode('date')}
+                                    />
+                                }
                                 onChangeText={text => setDateOfBirth(text)}
                             />
                         </View>
@@ -74,6 +98,8 @@ export default function RegistrationDetailsScreen({ navigation }: Props) {
                             <TextInput
                                 mode="outlined"
                                 value={bio}
+                                style={{ height: 100 }}
+                                multiline={true}
                                 onChangeText={text => setBio(text)}
                             />
                         </View>
@@ -91,6 +117,16 @@ export default function RegistrationDetailsScreen({ navigation }: Props) {
                     </Button>
                 </View>
             </ScrollView>
+            {open && (
+                <DateTimePicker
+                    testID="dateTimePicker"
+                    mode="date"
+                    value={date || new Date()}
+                    is24Hour={true}
+                    display="default"
+                    onChange={onChange}
+                />
+            )}
         </>
     );
 }

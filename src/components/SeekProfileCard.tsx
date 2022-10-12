@@ -28,7 +28,10 @@ export function SeekProfileCard(props: SeekProfileCardProps) {
     const theme = useTheme();
     return (
         <View style={styles.card}>
-            <ScrollView>
+            <ScrollView
+                decelerationRate={'fast'}
+                snapToInterval={500} //your element width
+                snapToAlignment={'center'}>
                 <View
                     onStartShouldSetResponder={() => true}
                     onTouchEnd={e => {

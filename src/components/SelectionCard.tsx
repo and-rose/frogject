@@ -10,6 +10,8 @@ import { RootStackParamList } from '../navigation/Navigation';
 export default function SelectionCard(props: {
     title: string;
     route?: keyof HomeStackParams | keyof RootStackParamList;
+    fontSize?: number;
+    clickable?: boolean;
 }) {
     const tabNavigation = useNavigation<TabActionHelpers<HomeStackParams>>();
     const stackNavigation = useNavigation<StackNavigationProp<RootStackParamList>>();
@@ -21,10 +23,12 @@ export default function SelectionCard(props: {
                     style={styles.card}
                     collapsable
                     onPress={() => {
-                        if (props.route !== 'Rewards') {
-                            tabNavigation.jumpTo(props.route);
-                        } else {
-                            stackNavigation.navigate(props.route);
+                        if (props.clickable) {
+                            if (props.route !== 'Rewards') {
+                                tabNavigation.jumpTo(props.route);
+                            } else {
+                                stackNavigation.navigate(props.route);
+                            }
                         }
                     }}
                     mode="contained">
@@ -33,6 +37,7 @@ export default function SelectionCard(props: {
                             variant="headlineSmall"
                             style={{
                                 fontFamily: 'JosefinSans_400Regular',
+                                fontSize: props.fontSize ?? 30,
                                 textTransform: 'uppercase',
                                 color: '#FFFFFF',
                             }}>
