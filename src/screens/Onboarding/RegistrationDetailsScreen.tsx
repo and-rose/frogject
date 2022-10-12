@@ -120,7 +120,6 @@ export default function RegistrationDetailsScreen({ navigation }: Props) {
             {open && (
                 <DateTimePicker
                     testID="dateTimePicker"
-                    mode="date"
                     value={date || new Date()}
                     is24Hour={true}
                     display="default"
