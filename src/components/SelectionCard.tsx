@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
     card: {
         borderRadius: 15,
         height: 150,
-        margin: 10,
+        marginVertical: 10,
     },
     cardTitleText: {
         fontFamily: 'JosefinSans_400Regular',

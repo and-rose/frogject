@@ -161,3 +161,48 @@ export const infoData = ['Male', 'Oceania', '18-30', 'Valorant', 'Casual'];
 export const shortInfoData = ['Sentinel', 'Silver'];
 
 export const tiers = ['Tier 1', 'Tier 2', 'Tier 3'];
+
+export const rewardsProgress = {
+    endorsementProgress: 700,
+    endorsementsCounts: {
+        goodSportsmanship: 0,
+        mostValuablePlayer: 0,
+        clutchedUp: 0,
+    },
+    availableRewards: [
+        "Gun Buddy",
+        "Spray",
+        "Player Card",
+        "Title",
+        "Weapon Skin",
+        "Player Icon",
+    ]
+}
+
+export type EndorsementDetails = {
+    type: string;
+    title: string;
+    description: string;
+    icon: 'hand-clap' | 'trophy' | 'medal';
+}
+
+export const endorsementTypes = [
+    {
+        type: 'goodSportsmanship',
+        title: 'Good Sportsmanship',
+        description: 'Be a good sport and show respect to your teammates and opponents.',
+        icon: 'hand-clap',
+    },
+    {
+        type: 'mostValuablePlayer',
+        title: 'Most Valuable Player',
+        description: 'Be a good sport and show respect to your teammates and opponents.',
+        icon: 'trophy',
+    },
+    {
+        type: 'clutchedUp',
+        title: 'Clutched Up',
+        description: 'Be a good sport and show respect to your teammates and opponents.',
+        icon: 'medal',
+    },
+];

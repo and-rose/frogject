@@ -1,10 +1,16 @@
 import * as React from 'react';
 import { useCallback, useEffect, useState } from 'react';
 import { StyleSheet } from 'react-native';
-import { GiftedChat } from 'react-native-gifted-chat';
+import { GiftedChat, Bubble } from 'react-native-gifted-chat';
+import { useTheme } from 'react-native-paper';
+
+function REGROUPChatBubble(props: any) {
+    return <Bubble {...props} />;
+}
 
 export function ChatScreen() {
     const [messages, setMessages] = useState<any>([]);
+    const theme = useTheme();
 
     useEffect(() => {
         setMessages([
@@ -28,6 +34,26 @@ export function ChatScreen() {
     return (
         <GiftedChat
             messages={messages}
+            renderBubble={props => {
+                return (
+                    <Bubble
+                        {...props}
+                        // renderMessageText={message.data.text}
+                        wrapperStyle={{
+                            left: {
+                                borderBottomLeftRadius: 0,
+                                padding: 5,
+                                backgroundColor: theme.colors.chatBubbleColor,
+                            },
+                            right: {
+                                backgroundColor: theme.colors.chatBubbleColorVariant,
+                                borderBottomRightRadius: 0,
+                                padding: 5,
+                            },
+                        }}
+                    />
+                );
+            }}
             renderTime={() => null}
             renderComposer={() => null}
             onSend={messages => onSend(messages)}
@@ -59,6 +85,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
     },
 });
+
 function createMaterialTopTabNavigator() {
     throw new Error('Function not implemented.');
 }
