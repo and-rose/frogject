@@ -1,4 +1,4 @@
-# RE:GROUP
+# Welcome to the Frogject
 
 ## Installing dependencies
 
@@ -18,12 +18,10 @@ $ yarn install
 ```
 This will create a new directory in the project folder called `node_modules` where a large collection of external JavaScript libraries will live. These packages are specified in the `package.json` file and automatically managed by [Yarn](https://yarnpkg.com/)
 
-## Running the Local Dervelopment Server
+## Running the Local Development Server
 You can now start the local development server using:
 ```sh
 $ yarn start
 ```
 
-This will open the Expo CLI and present a QR Code in the terminal. You will need the [Expo Go](https://expo.dev/client) mobile app to access the application you are hosting. This page will hot-refresh as you make changes to the code base and output errors to your terminal. Happy prototyping!
-
-
+This will open the Expo CLI and present a QR Code in the terminal. You will need the [Expo Go](https://expo.dev/client) mobile app to access the application you are hosting. This page will hot-refresh as you make changes to the code base and output errors to your terminal.
