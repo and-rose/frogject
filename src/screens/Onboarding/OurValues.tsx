@@ -105,8 +105,6 @@ export function OurValuesQuizScreen({ navigation }: Props) {
         const newQuizState = [...quizValuesState];
         newQuizState[index].status = !status;
         setQuizValuesState(newQuizState);
-
-        console.log(quizValuesState);
     }
 
     return (
@@ -152,7 +150,9 @@ export function OurValuesQuizScreen({ navigation }: Props) {
                                         onPress={() => {
                                             updateQuizState(index, value.status);
                                         }}
-                                        labelStyle={value.status ? {} : { color: 'black' }}>
+                                        labelStyle={
+                                            value.status ? { color: 'white' } : { color: 'black' }
+                                        }>
                                         {value.value}
                                     </Button>
                                 );
