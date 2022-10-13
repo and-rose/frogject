@@ -91,7 +91,7 @@ export default function RegistrationInterestsScreen({ navigation }: Props) {
                     </View>
                     <Button
                         mode="contained"
-                        onPress={() => navigation.replace('REGROUP', { screen: 'Home' })}
+                        onPress={() => navigation.navigate('OurValues')}
                         style={{ marginTop: 20, alignSelf: 'center' }}
                         uppercase
                         labelStyle={{

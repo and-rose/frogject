@@ -14,6 +14,7 @@ import LiveReactScreen from '../screens/LiveReactScreen';
 import IndeterminateSplash from '../screens/misc/IndeterminateSplash';
 import Splash from '../screens/misc/Splash';
 import LoginScreen from '../screens/onboarding/LoginScreen';
+import OurValuesScreen, { OurValuesQuizScreen } from '../screens/onboarding/OurValues';
 import RegistrationDetailsScreen from '../screens/onboarding/RegistrationDetailsScreen';
 import RegistrationInterestsScreen from '../screens/onboarding/RegistrationInterestsScreen';
 import RewardsScreen from '../screens/RewardsScreen';
@@ -32,6 +33,8 @@ export type RootStackParamList = {
     Login: undefined;
     RegistrationDetails: undefined;
     RegistrationInterests: undefined;
+    OurValues: undefined;
+    OurValuesQuiz: undefined;
 };
 
 function getHeaderTitle(route: RouteProp<RootStackParamList>) {
@@ -110,6 +113,22 @@ export default function Navigation() {
                 <Stack.Screen
                     name="RegistrationInterests"
                     component={RegistrationInterestsScreen}
+                    options={{
+                        headerShown: false,
+                        ...TransitionPresets.SlideFromRightIOS,
+                    }}
+                />
+                <Stack.Screen
+                    name="OurValues"
+                    component={OurValuesScreen}
+                    options={{
+                        headerShown: false,
+                        ...TransitionPresets.SlideFromRightIOS,
+                    }}
+                />
+                <Stack.Screen
+                    name="OurValuesQuiz"
+                    component={OurValuesQuizScreen}
                     options={{
                         headerShown: false,
                         ...TransitionPresets.SlideFromRightIOS,

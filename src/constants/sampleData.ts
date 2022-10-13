@@ -200,3 +200,7 @@ export const endorsementTypes = [
         icon: 'medal',
     },
 ];
+
+export const regroupValues = ["Honesty", "Integrity","Respect","Teamwork","Communication",]
+
+export const regroupQuizValues = ["Honesty", "Superiority", "Integrity", "Respect", "Power", "Teamwork", "Assertiveness", "Communication",]
