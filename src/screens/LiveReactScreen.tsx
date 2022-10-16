@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
-import { View } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import Draggable from 'react-native-draggable';
-import { Button, useTheme } from 'react-native-paper';
+import { Button, Dialog, Paragraph, Portal, RadioButton, useTheme, Text } from 'react-native-paper';
 import ConfettiCannon from 'react-native-confetti-cannon';
 import Explosion from 'react-native-confetti-cannon';
 import LiveReactDisc from '../components/LiveReact/LiveReactDisc';
@@ -11,6 +11,11 @@ import * as Haptics from 'expo-haptics';
 export function LiveReactScreen(props: { navigation: any; route: any }) {
     const confettiRef = useRef<Explosion>(null);
     const [sessionLive, setSessionLive] = useState(false);
+    const [visible, setVisible] = React.useState(false);
+    const [endorseVisible, setEndorseVisible] = React.useState(false);
+    const hideDialog = () => setVisible(false);
+    const hideEndorseDialog = () => setEndorseVisible(false);
+    const [endorseValue, setEndorseValue] = React.useState('first');
 
     function fireConfetti() {
         if (confettiRef.current) {
@@ -84,7 +89,7 @@ export function LiveReactScreen(props: { navigation: any; route: any }) {
                     <Button
                         mode="contained"
                         onPress={() => {
-                            setSessionLive(false);
+                            setVisible(true);
                         }}
                         style={{ marginTop: 20, alignSelf: 'center' }}
                         uppercase
@@ -94,6 +99,59 @@ export function LiveReactScreen(props: { navigation: any; route: any }) {
                         }}>
                         End Session
                     </Button>
+                    <Portal>
+                        <Dialog visible={visible} dismissable={false}>
+                            <Dialog.Icon icon="alert" />
+                            <Dialog.Title style={styles.title}>End Live React Session</Dialog.Title>
+                            <Dialog.Content>
+                                <Paragraph>
+                                    Are you sure you would like to end your session with{' '}
+                                    {props.route.params.name}?
+                                </Paragraph>
+                            </Dialog.Content>
+                            <Dialog.Actions>
+                                <Button onPress={hideDialog}>Cancel</Button>
+                                <Button
+                                    onPress={() => {
+                                        hideDialog();
+                                        setEndorseVisible(true);
+                                    }}>
+                                    Yes
+                                </Button>
+                            </Dialog.Actions>
+                        </Dialog>
+                        <Dialog visible={endorseVisible} dismissable={true}>
+                            <Dialog.Icon icon="alert" />
+                            <Dialog.Title style={styles.title}>
+                                Would you like to gift {props.route.params.name} an endorsement?
+                            </Dialog.Title>
+                            <Dialog.Content>
+                                <RadioButton.Group
+                                    onValueChange={newValue => setEndorseValue(newValue)}
+                                    value={endorseValue}>
+                                    <RadioButton.Item label="Good Sportsmanship" value="first" />
+                                    <RadioButton.Item label="Most Valuable Player" value="second" />
+                                    <RadioButton.Item label="Clutched Up" value="third" />
+                                </RadioButton.Group>
+                            </Dialog.Content>
+                            <Dialog.Actions>
+                                <Button
+                                    onPress={() => {
+                                        hideEndorseDialog();
+                                        setSessionLive(false);
+                                    }}>
+                                    Maybe Next Time
+                                </Button>
+                                <Button
+                                    onPress={() => {
+                                        hideEndorseDialog();
+                                        setSessionLive(false);
+                                    }}>
+                                    Submit
+                                </Button>
+                            </Dialog.Actions>
+                        </Dialog>
+                    </Portal>
                 </>
             ) : (
                 <Button
@@ -115,3 +173,9 @@ export function LiveReactScreen(props: { navigation: any; route: any }) {
 }
 
 export default LiveReactScreen;
+
+const styles = StyleSheet.create({
+    title: {
+        textAlign: 'center',
+    },
+});
