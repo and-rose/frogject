@@ -69,7 +69,17 @@ export function SeekProfileCard(props: SeekProfileCardProps) {
                             />
                         </View>
                         <View style={styles.nameAndDetails}>
-                            <Text style={styles.text}>{props.profileData.username}</Text>
+                            <View
+                                style={{
+                                    backgroundColor: theme.colors.background,
+                                    flex: 1,
+                                    alignItems: 'center',
+                                    alignSelf: 'flex-start',
+                                    borderRadius: 40,
+                                    marginBottom: 10,
+                                }}>
+                                <Text style={styles.text}>{props.profileData.username}</Text>
+                            </View>
                             <View
                                 style={{
                                     flexDirection: 'row',
@@ -127,8 +137,13 @@ const styles = StyleSheet.create({
     text: {
         fontFamily: 'JosefinSans_400Regular',
         textAlign: 'left',
+        color: LeaperTheme.colors.primary,
+        padding: 10,
+        marginHorizontal: 10,
+        marginTop: -8,
+        marginBottom: 2,
         fontSize: 30,
-        marginBottom: 10,
+        textAlignVertical: 'center',
     },
     cardPicture: {
         height: 690,
