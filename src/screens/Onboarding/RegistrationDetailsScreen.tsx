@@ -64,7 +64,7 @@ export default function RegistrationDetailsScreen({ navigation }: Props) {
                             style={{ margin: 30, alignSelf: 'center' }}
                         />
                         <View style={styles.entryBlock}>
-                            <Text style={styles.entryText}>Name</Text>
+                            <Text style={styles.entryText}>Username</Text>
                             <TextInput
                                 mode="outlined"
                                 value={name}

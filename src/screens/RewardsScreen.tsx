@@ -51,7 +51,7 @@ function RewardCard(props: { rewardName: string; rewardicon: string }) {
         <Card style={[styles.rewardsCard, { backgroundColor: theme.colors.tertiary }]}>
             {/* <Card.Title title="Card Title" subtitle="Card Subtitle" /> */}
             <Card.Content style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-                <MaterialCommunityIcons name={rewardicon} size={25} />
+                <MaterialCommunityIcons name={rewardicon} size={50} />
                 <Text style={styles.endorsementCardTitle}>{rewardName}</Text>
             </Card.Content>
         </Card>
@@ -91,7 +91,7 @@ export default function RewardsScreen() {
                             {endorsementTypes.map((endorsement, index) => (
                                 <EndorsementCard
                                     endorsement={endorsement}
-                                    count={rewards.endorsementsCounts.clutchedUp}
+                                    count={rewards.endorsementsCounts[index]}
                                     key={index}
                                 />
                             ))}
@@ -173,15 +173,15 @@ const styles = StyleSheet.create({
     },
     endorsementCardTitle: {
         fontFamily: 'JosefinSans_700Bold',
-        fontSize: 8,
+        fontSize: 10,
         textTransform: 'uppercase',
         textAlign: 'center',
     },
     rewardsCard: {
         flex: 1,
         marginRight: 10,
-        height: 110,
-        width: 80,
+        height: 175,
+        width: 127,
         borderRadius: 10,
     },
 });

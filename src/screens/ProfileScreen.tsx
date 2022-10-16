@@ -22,8 +22,8 @@ export default function ProfileScreen({ navigation }: Props) {
                         style={{ margin: 30, alignSelf: 'center' }}
                     />
                     <View style={styles.entryBlock}>
-                        <Text style={styles.entryText}>Name</Text>
-                        <Text style={styles.detailsText}>Braith</Text>
+                        <Text style={styles.entryText}>Username</Text>
+                        <Text style={styles.detailsText}>nifty</Text>
                     </View>
                     <View style={styles.entryBlock}>
                         <Text style={styles.entryText}>Pronouns</Text>
@@ -36,7 +36,7 @@ export default function ProfileScreen({ navigation }: Props) {
                     <View style={styles.entryBlock}>
                         <Text style={styles.entryText}>About Me</Text>
                         <Text style={styles.detailsText}>
-                            I am a student at the University of Washington.
+                            I am a lover of all things FPS and I am a huge fan of eSports.
                         </Text>
                     </View>
                     <View style={styles.entryBlock}>

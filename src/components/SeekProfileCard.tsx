@@ -4,6 +4,7 @@ import { ImageBackground, ScrollView, StyleSheet, View } from 'react-native';
 import { Divider, IconButton, Text, useTheme } from 'react-native-paper';
 
 import { infoData, shortInfoData } from '../constants/sampleData';
+import LeaperTheme from '../constants/theme';
 import { REGROUPChip } from './REGROUPChip';
 
 export interface SeekProfileCardProps {
@@ -41,12 +42,12 @@ export function SeekProfileCard(props: SeekProfileCardProps) {
                     <ImageBackground
                         imageStyle={{
                             overflow: 'hidden',
-                            borderTopLeftRadius: 10,
-                            borderTopRightRadius: 10,
+                            borderTopLeftRadius: 40,
+                            borderTopRightRadius: 40,
                         }}
                         style={styles.cardPicture}
                         resizeMode="cover"
-                        source={require('../../assets/400x700.png')}>
+                        source={props.profileData.profilePic}>
                         <View style={styles.containerAlt}>
                             <IconButton
                                 icon="close"
@@ -68,7 +69,7 @@ export function SeekProfileCard(props: SeekProfileCardProps) {
                             />
                         </View>
                         <View style={styles.nameAndDetails}>
-                            <Text style={styles.text}>{props.profileData.name}</Text>
+                            <Text style={styles.text}>{props.profileData.username}</Text>
                             <View
                                 style={{
                                     flexDirection: 'row',
@@ -116,7 +117,7 @@ const styles = StyleSheet.create({
         width: '100%',
         height: '83.5%',
         alignSelf: 'center',
-        backgroundColor: 'white',
+        backgroundColor: LeaperTheme.colors.backgroundVariant,
     },
     nameAndDetails: {
         position: 'absolute',

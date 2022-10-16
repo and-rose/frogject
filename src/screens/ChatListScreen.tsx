@@ -16,7 +16,7 @@ TimeAgo.addLocale(en);
 
 type Props = NativeStackScreenProps<RootStackParamList>;
 
-export function ChatListScreen({ navigation }: Props) {
+export function ChatListScreen({ navigation, route }: Props) {
     const theme = useTheme();
     const timeAgo = new TimeAgo('en-US');
     const [chatsData, setChatsData] = useState(
@@ -30,7 +30,7 @@ export function ChatListScreen({ navigation }: Props) {
                 data={chatsData}
                 renderItem={rowData => (
                     <List.Item
-                        title={rowData.item.data.name}
+                        title={rowData.item.data.username}
                         style={{ backgroundColor: theme.colors.background }}
                         descriptionStyle={rowData.item.data.unread ? { fontWeight: 'bold' } : {}}
                         titleStyle={
@@ -39,7 +39,7 @@ export function ChatListScreen({ navigation }: Props) {
                                 : {}
                         }
                         onPress={() =>
-                            navigation.navigate('ChatTopTabs', { name: rowData.item.data.name })
+                            navigation.navigate('ChatTopTabs', { name: rowData.item.data.username })
                         }
                         description={rowData.item.data.lastMessage.text}
                         left={() => (
@@ -52,7 +52,7 @@ export function ChatListScreen({ navigation }: Props) {
                                     marginRight: 10,
                                     backgroundColor: theme.colors.secondary,
                                 }}
-                                label={getInitials(rowData.item.data.name)}
+                                label={getInitials(rowData.item.data.username)}
                             />
                         )}
                         right={() =>
@@ -92,11 +92,6 @@ export function ChatListScreen({ navigation }: Props) {
                             <Text style={styles.backTextWhite}>Report</Text>
                         </TouchableOpacity>
                     </View>
-                    // <View style={styles.rowBack}>
-                    //     <TouchableOpacity onPress={() => rowMap[rowData.item.key].closeRow()}>
-                    //         <Text>Close</Text>
-                    //     </TouchableOpacity>
-                    // </View>
                 )}
                 rightOpenValue={-75}
                 onRowOpen={(rowKey, rowMap) => {

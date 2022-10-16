@@ -1,10 +1,10 @@
-import { IconProps } from 'react-native-vector-icons/Icon';
 import { HomeStackParams } from '../navigation/BottomTabs';
 
 export const chatsData = [
     {
         id: 1,
-        name: 'Ethan',
+        username: 'icebear165',
+        profilePic: require('../../assets/profileImages/andrea.png'),
         unread: true,
         lastMessage: {
             text: 'You on your way?',
@@ -13,7 +13,8 @@ export const chatsData = [
     },
     {
         id: 2,
-        name: 'Bryan',
+        username: 'smokepitch',
+        profilePic: require('../../assets/profileImages/antoni.png'),
         unread: true,
         lastMessage: {
             text: "Hey, it's me",
@@ -22,7 +23,8 @@ export const chatsData = [
     },
     {
         id: 3,
-        name: 'Avery',
+        username: 'favourking',
+        profilePic: require('../../assets/profileImages/nataliya.png'),
         unread: true,
         lastMessage: {
             text: 'I should buy a boat',
@@ -31,7 +33,8 @@ export const chatsData = [
     },
     {
         id: 4,
-        name: 'Katie',
+        username: 'jamesbond',
+        profilePic: require('../../assets/profileImages/andrea.png'),
         unread: false,
         lastMessage: {
             text: 'Look at my mukluks!',
@@ -40,7 +43,8 @@ export const chatsData = [
     },
     {
         id: 5,
-        name: 'Ray',
+        username: 'aleksib',
+        profilePic: require('../../assets/profileImages/nataliya.png'),
         unread: false,
         lastMessage: {
             text: 'This is wicked good ice cream.',
@@ -49,7 +53,8 @@ export const chatsData = [
     },
     {
         id: 6,
-        name: 'Bryan',
+        username: 's1mple',
+        profilePic: require('../../assets/profileImages/antoni.png'),
         unread: false,
         lastMessage: {
             text: "Hey, it's me",
@@ -58,7 +63,8 @@ export const chatsData = [
     },
     {
         id: 7,
-        name: 'Avery',
+        username: 'den1s',
+        profilePic: require('../../assets/profileImages/nataliya.png'),
         unread: false,
         lastMessage: {
             text: 'I should buy a boat',
@@ -67,7 +73,8 @@ export const chatsData = [
     },
     {
         id: 8,
-        name: 'Katie',
+        username: 'Zywoo',
+        profilePic: require('../../assets/profileImages/antoni.png'),
         unread: false,
         lastMessage: {
             text: 'Look at my mukluks!',
@@ -76,7 +83,8 @@ export const chatsData = [
     },
     {
         id: 9,
-        name: 'Ray',
+        username: 'electronic',
+        profilePic: require('../../assets/profileImages/nataliya.png'),
         unread: false,
         lastMessage: {
             text: 'This is wicked good ice cream.',
@@ -85,7 +93,8 @@ export const chatsData = [
     },
     {
         id: 10,
-        name: 'Katie',
+        username: 'n0thing',
+        profilePic: require('../../assets/profileImages/andrea.png'),
         unread: false,
         lastMessage: {
             text: 'Look at my mukluks!',
@@ -94,7 +103,8 @@ export const chatsData = [
     },
     {
         id: 11,
-        name: 'Ray',
+        username: 'dev1ce',
+        profilePic: require('../../assets/profileImages/nataliya.png'),
         unread: false,
         lastMessage: {
             text: 'This is wicked good ice cream.',
@@ -103,7 +113,8 @@ export const chatsData = [
     },
     {
         id: 12,
-        name: 'Bryan',
+        username: 'kjaerbye',
+        profilePic: require('../../assets/profileImages/antoni.png'),
         unread: false,
         lastMessage: {
             text: "Hey, it's me",
@@ -112,7 +123,8 @@ export const chatsData = [
     },
     {
         id: 13,
-        name: 'Avery',
+        username: 'dupreeh',
+        profilePic: require('../../assets/profileImages/nataliya.png'),
         unread: false,
         lastMessage: {
             text: 'I should buy a boat',
@@ -121,7 +133,8 @@ export const chatsData = [
     },
     {
         id: 14,
-        name: 'Katie',
+        username: 'gla1ve',
+        profilePic: require('../../assets/profileImages/antoni.png'),
         unread: false,
         lastMessage: {
             text: 'Look at my mukluks!',
@@ -130,7 +143,8 @@ export const chatsData = [
     },
     {
         id: 15,
-        name: 'Ray',
+        username: 'xyp9x',
+        profilePic: require('../../assets/profileImages/nataliya.png'),
         unread: false,
         lastMessage: {
             text: 'This is wicked good ice cream.',
@@ -192,11 +206,7 @@ export const rewardsData = [
 
 export const rewardsProgress = {
     endorsementProgress: 700,
-    endorsementsCounts: {
-        goodSportsmanship: 0,
-        mostValuablePlayer: 0,
-        clutchedUp: 0,
-    },
+    endorsementsCounts: [2, 5, 12],
     availableRewards: rewardsData,
 };
 

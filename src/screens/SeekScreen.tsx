@@ -26,7 +26,7 @@ export default function SeekScreen() {
                     stackAnimationTension={40}
                     verticalSwipe={false}
                     cardIndex={0}
-                    backgroundColor={theme.colors.background}
+                    backgroundColor={theme.colors.backgroundVariant}
                     containerStyle={styles.container}
                     stackSize={2}
                     stackSeparation={0}

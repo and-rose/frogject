@@ -1,13 +1,14 @@
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { Avatar } from 'react-native-paper';
 import LeaperTheme from '../../constants/theme';
+import { getInitials } from '../../utils/stringUtils';
 
-export default function LiveReactDisc(props: { initials: string }) {
+export default function LiveReactDisc(props: { name: string }) {
     return (
         <View style={styles.container}>
             <Avatar.Text
                 size={100}
-                label={props.initials}
+                label={getInitials(props.name ?? '')}
                 style={{ backgroundColor: LeaperTheme.colors.secondary }}
             />
         </View>

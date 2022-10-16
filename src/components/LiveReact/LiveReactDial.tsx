@@ -3,13 +3,13 @@ import { View, StyleSheet } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import LeaperTheme from '../../constants/theme';
 
-export default function LiveReactDial(props: { actions: string[3] }) {
+export default function LiveReactDial(props: { actions: string[] }) {
     return (
         <View style={styles.dialContainer}>
             <LiveReactIcon icon={props.actions[0]} style={styles.topAction} />
             <LiveReactIcon icon={props.actions[1]} style={styles.bottomAction} />
             <LiveReactIcon icon={props.actions[2]} style={styles.leftAction} />
-            <LiveReactIcon icon={props.actions[2]} style={styles.rightAction} />
+            <LiveReactIcon icon={props.actions[3]} style={styles.rightAction} />
         </View>
     );
 }
@@ -17,7 +17,12 @@ export default function LiveReactDial(props: { actions: string[3] }) {
 function LiveReactIcon(props: { icon: string; style: any }) {
     return (
         <View style={[styles.iconContainer, props.style]}>
-            <MaterialCommunityIcons name={'email'} size={35} style={{ padding: 10 }} />
+            <MaterialCommunityIcons
+                name={props.icon}
+                size={35}
+                style={{ padding: 10 }}
+                color={LeaperTheme.colors.primary}
+            />
         </View>
     );
 }

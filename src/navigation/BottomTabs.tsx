@@ -1,5 +1,6 @@
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+import { useLinkProps } from '@react-navigation/native';
 import React from 'react';
 import { useTheme } from 'react-native-paper';
 

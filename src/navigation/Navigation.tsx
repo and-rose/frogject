@@ -26,7 +26,6 @@ export type RootStackParamList = {
     CheckIn: undefined;
     Splash: undefined;
     IndeterminateSplash: undefined;
-    LiveReact: undefined;
     ChatTopTabs: { name: string };
     Debug: undefined;
     Rewards: undefined;
@@ -167,14 +166,7 @@ export default function Navigation() {
                         ...TransitionPresets.SlideFromRightIOS,
                     })}
                 />
-                <Stack.Screen
-                    name="LiveReact"
-                    component={LiveReactScreen}
-                    options={() => ({
-                        title: 'Live React',
-                        ...TransitionPresets.SlideFromRightIOS,
-                    })}
-                />
+
                 <Stack.Screen
                     name="Rewards"
                     component={RewardsScreen}
