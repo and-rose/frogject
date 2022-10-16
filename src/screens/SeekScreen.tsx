@@ -1,9 +1,9 @@
 import React, { useRef } from 'react';
 import { StyleSheet, View } from 'react-native';
 import Swiper from 'react-native-deck-swiper';
-import { IconButton, useTheme } from 'react-native-paper';
-import { SeekProfileCard } from '../components/SeekProfileCard';
+import { useTheme } from 'react-native-paper';
 
+import { SeekProfileCard } from '../components/SeekProfileCard';
 import { chatsData } from '../constants/sampleData';
 
 export default function SeekScreen() {

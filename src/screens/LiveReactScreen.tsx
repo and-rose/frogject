@@ -60,15 +60,6 @@ export function LiveReactScreen(props: { navigation: any; route: any }) {
                             autoStart={false}
                             ref={confettiRef}
                         />
-                        <ConfettiCannon
-                            count={25}
-                            fadeOut
-                            explosionSpeed={1000}
-                            fallSpeed={4000}
-                            origin={{ x: dimensions.width - 60, y: dimensions.height / 2 }}
-                            autoStart={false}
-                            ref={confettiRef}
-                        />
                         <LiveReactDial
                             actions={['thumb-down', 'thumb-up', 'fire', 'party-popper']}
                         />

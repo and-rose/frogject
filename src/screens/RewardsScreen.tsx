@@ -1,14 +1,14 @@
-import React from 'react';
-import { StyleSheet, View, ScrollView } from 'react-native';
-import { Text, ProgressBar, useTheme, Card, Badge } from 'react-native-paper';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import React from 'react';
+import { ScrollView, StyleSheet, View } from 'react-native';
+import { Badge, Card, ProgressBar, Text, useTheme } from 'react-native-paper';
 
 import SelectionCard from '../components/SelectionCard';
 import {
-    endorsementTypes,
     EndorsementDetails,
-    tiers,
+    endorsementTypes,
     rewardsProgress,
+    tiers,
 } from '../constants/sampleData';
 
 function EndorsementCard(props: { endorsement: EndorsementDetails; count: number }) {

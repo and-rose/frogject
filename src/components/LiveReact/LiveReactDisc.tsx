@@ -1,5 +1,6 @@
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { Avatar } from 'react-native-paper';
+
 import LeaperTheme from '../../constants/theme';
 import { getInitials } from '../../utils/stringUtils';
 

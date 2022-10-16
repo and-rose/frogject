@@ -10,7 +10,6 @@ import { Badge, IconButton, useTheme } from 'react-native-paper';
 
 import { ChatMoreMenu } from '../components/ChatReportMenu';
 import DebugScreen from '../screens/DebugScreen';
-import LiveReactScreen from '../screens/LiveReactScreen';
 import IndeterminateSplash from '../screens/misc/IndeterminateSplash';
 import Splash from '../screens/misc/Splash';
 import LoginScreen from '../screens/onboarding/LoginScreen';

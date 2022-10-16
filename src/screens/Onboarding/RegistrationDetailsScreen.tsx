@@ -1,8 +1,8 @@
+import DateTimePicker from '@react-native-community/datetimepicker';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import React, { useState } from 'react';
 import { Platform, ScrollView, StyleSheet, View } from 'react-native';
 import { Appbar, Avatar, Button, Text, TextInput, useTheme } from 'react-native-paper';
-import DateTimePicker from '@react-native-community/datetimepicker';
 
 import { RootStackParamList } from '../../navigation/Navigation';
 

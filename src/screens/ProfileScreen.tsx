@@ -1,8 +1,8 @@
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import React, { useState } from 'react';
 import { ScrollView, StyleSheet, View } from 'react-native';
-import { Appbar, Avatar, Button, Text, TextInput, useTheme } from 'react-native-paper';
-import { ChipSet } from '../components/ChipSet';
+import { Avatar, Button, Text } from 'react-native-paper';
+
 import { REGROUPChip } from '../components/REGROUPChip';
 import { RootStackParamList } from '../navigation/Navigation';
 
