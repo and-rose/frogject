@@ -42,14 +42,16 @@ function EndorsementCard(props: { endorsement: EndorsementDetails; count: number
     );
 }
 
-function RewardCard(props: { rewardName: string }) {
+function RewardCard(props: { rewardName: string; rewardicon: string }) {
     const theme = useTheme();
     const rewardName = props.rewardName;
+    const rewardicon = props.rewardicon;
 
     return (
         <Card style={[styles.rewardsCard, { backgroundColor: theme.colors.tertiary }]}>
             {/* <Card.Title title="Card Title" subtitle="Card Subtitle" /> */}
             <Card.Content style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+                <MaterialCommunityIcons name={rewardicon} size={25} />
                 <Text style={styles.endorsementCardTitle}>{rewardName}</Text>
             </Card.Content>
         </Card>
@@ -100,8 +102,12 @@ export default function RewardsScreen() {
                         <ScrollView
                             horizontal
                             contentContainerStyle={{ paddingLeft: 2, paddingVertical: 20 }}>
-                            {rewards.availableRewards.map((name, index) => (
-                                <RewardCard rewardName={name} key={index} />
+                            {rewards.availableRewards.map((reward, index) => (
+                                <RewardCard
+                                    rewardName={reward.title}
+                                    key={index}
+                                    rewardicon={reward.icon}
+                                />
                             ))}
                         </ScrollView>
                     </View>
@@ -167,7 +173,7 @@ const styles = StyleSheet.create({
     },
     endorsementCardTitle: {
         fontFamily: 'JosefinSans_700Bold',
-        fontSize: 10,
+        fontSize: 8,
         textTransform: 'uppercase',
         textAlign: 'center',
     },

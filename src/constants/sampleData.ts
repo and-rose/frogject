@@ -163,6 +163,33 @@ export const shortInfoData = ['Sentinel', 'Silver'];
 
 export const tiers = ['Tier 1 - Clutched Up', 'Tier 2 - MVP', 'Tier 3 - Good Sportsmanship'];
 
+export const rewardsData = [
+    {
+        title: 'Weapon Skin',
+        icon: 'pistol',
+    },
+    {
+        title: 'Radianite Points',
+        icon: 'diamond-stone',
+    },
+    {
+        title: 'Gun Buddy',
+        icon: 'dog',
+    },
+    {
+        title: 'Player Card',
+        icon: 'card-account-details',
+    },
+    {
+        title: 'Spray',
+        icon: 'spray',
+    },
+    {
+        title: 'Player Title',
+        icon: 'rename-box',
+    },
+];
+
 export const rewardsProgress = {
     endorsementProgress: 700,
     endorsementsCounts: {
@@ -170,7 +197,7 @@ export const rewardsProgress = {
         mostValuablePlayer: 0,
         clutchedUp: 0,
     },
-    availableRewards: ['Gun Buddy', 'Spray', 'Player Card', 'Title', 'Weapon Skin', 'Player Icon'],
+    availableRewards: rewardsData,
 };
 
 export type EndorsementDetails = {
@@ -185,22 +212,31 @@ export const endorsementTypes = [
         type: 'goodSportsmanship',
         title: 'Good Sportsmanship',
         description: 'Be a good sport and show respect to your teammates and opponents.',
-        icon: 'hand-clap',
+        icon: 'handshake',
     },
     {
         type: 'mostValuablePlayer',
         title: 'Most Valuable Player',
         description: 'Be a good sport and show respect to your teammates and opponents.',
-        icon: 'trophy',
+        icon: 'star-shooting',
     },
     {
         type: 'clutchedUp',
         title: 'Clutched Up',
         description: 'Be a good sport and show respect to your teammates and opponents.',
-        icon: 'medal',
+        icon: 'arm-flex',
     },
 ];
 
-export const regroupValues = ["Honesty", "Integrity","Respect","Teamwork","Communication",]
+export const regroupValues = ['Honesty', 'Integrity', 'Respect', 'Teamwork', 'Communication'];
 
-export const regroupQuizValues = ["Honesty", "Superiority", "Integrity", "Respect", "Power", "Teamwork", "Assertiveness", "Communication",]
+export const regroupQuizValues = [
+    'Honesty',
+    'Superiority',
+    'Integrity',
+    'Respect',
+    'Power',
+    'Teamwork',
+    'Assertiveness',
+    'Communication',
+];
