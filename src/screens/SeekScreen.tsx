@@ -17,10 +17,11 @@ export default function SeekScreen() {
                     cards={chatsData}
                     ref={swiperRef}
                     animateOverlayLabelsOpacity
-                    overlayOpacityHorizontalThreshold={20}
+                    overlayOpacityHorizontalThreshold={10}
                     cardVerticalMargin={0}
                     cardHorizontalMargin={0}
                     swipeAnimationDuration={200}
+                    horizontalThreshold={120}
                     infinite
                     stackAnimationFriction={40}
                     stackAnimationTension={40}
@@ -30,7 +31,7 @@ export default function SeekScreen() {
                     containerStyle={styles.container}
                     stackSize={2}
                     stackSeparation={0}
-                    stackScale={2}
+                    stackScale={10}
                     renderCard={data => {
                         return <SeekProfileCard profileData={data} swiperRef={swiperRef} />;
                     }}

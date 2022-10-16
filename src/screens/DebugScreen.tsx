@@ -48,13 +48,25 @@ export default function DebugScreen() {
             <Portal>
                 <Dialog visible={visible} dismissable={false}>
                     <Dialog.Icon icon="alert" />
-                    <Dialog.Title style={styles.title}>This is a title</Dialog.Title>
+                    <Dialog.Title style={styles.title}>Hey buddy...</Dialog.Title>
                     <Dialog.Content>
-                        <Paragraph>This is simple dialog</Paragraph>
+                        <Paragraph>
+                            Just checking in! We think its time to review our values.
+                        </Paragraph>
+                        <Paragraph>
+                            Note: your access to the app will be restricted until you complete these
+                            tasks
+                        </Paragraph>
                     </Dialog.Content>
                     <Dialog.Actions>
-                        <Button onPress={hideDialog}>Cancel</Button>
-                        <Button onPress={hideDialog}>Ok</Button>
+                        <Button onPress={hideDialog}>Dismiss</Button>
+                        <Button
+                            onPress={() => {
+                                navigation.navigate('OurValues');
+                                hideDialog();
+                            }}>
+                            Begin Tasks
+                        </Button>
                     </Dialog.Actions>
                 </Dialog>
             </Portal>
