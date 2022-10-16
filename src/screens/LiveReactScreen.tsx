@@ -66,7 +66,7 @@ export function LiveReactScreen(props: { navigation: any; route: any }) {
                             ref={confettiRef}
                         />
                         <LiveReactDial
-                            actions={['thumb-down', 'thumb-up', 'fire', 'party-popper']}
+                            actions={['thumb-down', 'handshake', 'arm-flex', 'trophy']}
                         />
                         <Draggable
                             x={dimensions.width / 2 - 61}

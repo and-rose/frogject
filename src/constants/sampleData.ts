@@ -228,7 +228,7 @@ export const endorsementTypes = [
         type: 'mostValuablePlayer',
         title: 'Most Valuable Player',
         description: 'Be a good sport and show respect to your teammates and opponents.',
-        icon: 'star-shooting',
+        icon: 'trophy',
     },
     {
         type: 'clutchedUp',
