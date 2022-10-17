@@ -1,6 +1,9 @@
 # Welcome to the Frogject
 
+You can find out about our design process [here](https://github.com/and-rose/frogject/wiki)
+
 ## What is in this Repository?
+
 This repository contains an Expo supported React Native codebase. The bulk of structure defining scripts can be found within the `src/` directory. Within the 'src/` directory you will find 5 folders.
 
 - `components/` contains reusable elements throughout the application
