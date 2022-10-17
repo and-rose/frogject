@@ -3,11 +3,13 @@
 ## What is in this Repository?
 This repository contains an Expo supported React Native codebase. The bulk of structure defining scripts can be found within the `src/` directory. Within the 'src/` directory you will find 5 folders.
 
-`components/` contains reusable elements throughout the application
-`constants/` contains various static data used for mocking designs in place of a full fleshed out backend. Themes and Message data are stored in this directory.
-`navigation/` is home to specifications for how each page component is linked to each other.
-`screens/` is where each screen present in the application is stored and defined.
-`utils/` contains an assortment of niche functions used throughout the rest of the codebase.
+- `components/` contains reusable elements throughout the application
+- `constants/` contains various static data used for mocking designs in place of a full fleshed out backend. Themes and Message data are stored in this directory.
+- `navigation/` is home to specifications for how each page component is linked to each other.
+- `screens/` is where each screen present in the application is stored and defined.
+- `utils/` contains an assortment of niche functions used throughout the rest of the codebase.
+
+Upon running `yarn start` the entrypoint for the application is found within `App.tsx`.
 
 ## Getting Started
 
