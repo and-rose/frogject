@@ -1,6 +1,6 @@
 # Welcome to the Frogject
 
-You can find out about our design process [here](https://github.com/and-rose/frogject/wiki)
+### You can find out about our design process [here](https://github.com/and-rose/frogject/wiki)
 
 ## What is in this Repository?
 
