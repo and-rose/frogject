@@ -7,7 +7,7 @@ export const chatsData = [
         profilePic: require('../../assets/profileImages/controller.jpg'),
         unread: true,
         lastMessage: {
-            text: 'You on your way?',
+            text: 'You down for some games?',
             createdAt: new Date(),
         },
     },
@@ -17,7 +17,7 @@ export const chatsData = [
         profilePic: require('../../assets/profileImages/invader.jpg'),
         unread: true,
         lastMessage: {
-            text: "Hey, it's me",
+            text: "Let's play some ranked",
             createdAt: new Date(Date.UTC(2022, 8, 11, 17, 20, 0)),
         },
     },
@@ -27,7 +27,7 @@ export const chatsData = [
         profilePic: require('../../assets/profileImages/keyboard.jpg'),
         unread: true,
         lastMessage: {
-            text: 'I should buy a boat',
+            text: "I'm feeling the itch for some Val",
             createdAt: new Date(Date.UTC(2022, 5, 11, 17, 20, 0)),
         },
     },
@@ -37,7 +37,7 @@ export const chatsData = [
         profilePic: require('../../assets/profileImages/switch.jpg'),
         unread: false,
         lastMessage: {
-            text: 'Look at my mukluks!',
+            text: 'The ranked grind is calling my name',
             createdAt: new Date(Date.UTC(2022, 5, 11, 17, 20, 0)),
         },
     },
@@ -47,7 +47,7 @@ export const chatsData = [
         profilePic: require('../../assets/profileImages/mess.jpg'),
         unread: false,
         lastMessage: {
-            text: 'This is wicked good ice cream.',
+            text: 'Valorant is the best game ever',
             createdAt: new Date(Date.UTC(2022, 5, 11, 17, 20, 0)),
         },
     },
@@ -57,7 +57,7 @@ export const chatsData = [
         profilePic: require('../../assets/profileImages/leaderboard.jpg'),
         unread: false,
         lastMessage: {
-            text: "Hey, it's me",
+            text: "Let's play some ranked",
             createdAt: new Date(Date.UTC(2022, 5, 11, 17, 20, 0)),
         },
     },
@@ -67,7 +67,7 @@ export const chatsData = [
         profilePic: require('../../assets/profileImages/reality.jpg'),
         unread: false,
         lastMessage: {
-            text: 'I should buy a boat',
+            text: 'Its gun buddy time!',
             createdAt: new Date(Date.UTC(2022, 5, 11, 17, 20, 0)),
         },
     },
@@ -77,7 +77,7 @@ export const chatsData = [
         profilePic: require('../../assets/profileImages/switch.jpg'),
         unread: false,
         lastMessage: {
-            text: 'Look at my mukluks!',
+            text: 'We got this',
             createdAt: new Date(Date.UTC(2022, 5, 11, 17, 20, 0)),
         },
     },
@@ -87,7 +87,7 @@ export const chatsData = [
         profilePic: require('../../assets/profileImages/controller.jpg'),
         unread: false,
         lastMessage: {
-            text: 'This is wicked good ice cream.',
+            text: 'Better luck next time :(',
             createdAt: new Date(Date.UTC(2022, 5, 11, 17, 20, 0)),
         },
     },
@@ -97,7 +97,7 @@ export const chatsData = [
         profilePic: require('../../assets/profileImages/joystick.jpg'),
         unread: false,
         lastMessage: {
-            text: 'Look at my mukluks!',
+            text: 'You think we can win tonight?',
             createdAt: new Date(Date.UTC(2022, 5, 11, 17, 20, 0)),
         },
     },
@@ -107,7 +107,7 @@ export const chatsData = [
         profilePic: require('../../assets/profileImages/controller.jpg'),
         unread: false,
         lastMessage: {
-            text: 'This is wicked good ice cream.',
+            text: 'Valorant never gets old',
             createdAt: new Date(Date.UTC(2022, 5, 11, 17, 20, 0)),
         },
     },
@@ -117,7 +117,7 @@ export const chatsData = [
         profilePic: require('../../assets/profileImages/leaderboard.jpg'),
         unread: false,
         lastMessage: {
-            text: "Hey, it's me",
+            text: "I can't wait to play",
             createdAt: new Date(Date.UTC(2022, 5, 11, 17, 20, 0)),
         },
     },
@@ -127,7 +127,7 @@ export const chatsData = [
         profilePic: require('../../assets/profileImages/keyboard.jpg'),
         unread: false,
         lastMessage: {
-            text: 'I should buy a boat',
+            text: 'They were just better than us',
             createdAt: new Date(Date.UTC(2022, 5, 11, 17, 20, 0)),
         },
     },
@@ -137,7 +137,7 @@ export const chatsData = [
         profilePic: require('../../assets/profileImages/mess.jpg'),
         unread: false,
         lastMessage: {
-            text: 'Look at my mukluks!',
+            text: "I've been practicing",
             createdAt: new Date(Date.UTC(2022, 5, 11, 17, 20, 0)),
         },
     },
@@ -147,7 +147,7 @@ export const chatsData = [
         profilePic: require('../../assets/profileImages/joystick.jpg'),
         unread: false,
         lastMessage: {
-            text: 'This is wicked good ice cream.',
+            text: 'I learnt soem new Viper lineups!',
             createdAt: new Date(Date.UTC(2022, 5, 11, 17, 20, 0)),
         },
     },
