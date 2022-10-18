@@ -172,7 +172,7 @@ export const homeCardsData: { title: string; route: keyof HomeStackParams }[] = 
     },
 ];
 
-export const infoData = ['Male', 'Oceania', '18-30', 'Valorant', 'Casual'];
+export const infoData = ['He/Him', 'Asia Pacific', 'Valorant', 'Books'];
 export const shortInfoData = ['Sentinel', 'Silver'];
 
 export const tiers = ['Tier 1 - Clutched Up', 'Tier 2 - MVP', 'Tier 3 - Good Sportsmanship'];
