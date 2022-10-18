@@ -4,7 +4,7 @@ export const chatsData = [
     {
         id: 1,
         username: 'icebear165',
-        profilePic: require('../../assets/profileImages/andrea.png'),
+        profilePic: require('../../assets/profileImages/controller.jpg'),
         unread: true,
         lastMessage: {
             text: 'You on your way?',
@@ -14,7 +14,7 @@ export const chatsData = [
     {
         id: 2,
         username: 'smokepitch',
-        profilePic: require('../../assets/profileImages/antoni.png'),
+        profilePic: require('../../assets/profileImages/invader.jpg'),
         unread: true,
         lastMessage: {
             text: "Hey, it's me",
@@ -24,7 +24,7 @@ export const chatsData = [
     {
         id: 3,
         username: 'favourking',
-        profilePic: require('../../assets/profileImages/nataliya.png'),
+        profilePic: require('../../assets/profileImages/keyboard.jpg'),
         unread: true,
         lastMessage: {
             text: 'I should buy a boat',
@@ -34,7 +34,7 @@ export const chatsData = [
     {
         id: 4,
         username: 'jamesbond',
-        profilePic: require('../../assets/profileImages/andrea.png'),
+        profilePic: require('../../assets/profileImages/switch.jpg'),
         unread: false,
         lastMessage: {
             text: 'Look at my mukluks!',
@@ -44,7 +44,7 @@ export const chatsData = [
     {
         id: 5,
         username: 'aleksib',
-        profilePic: require('../../assets/profileImages/nataliya.png'),
+        profilePic: require('../../assets/profileImages/mess.jpg'),
         unread: false,
         lastMessage: {
             text: 'This is wicked good ice cream.',
@@ -54,7 +54,7 @@ export const chatsData = [
     {
         id: 6,
         username: 's1mple',
-        profilePic: require('../../assets/profileImages/antoni.png'),
+        profilePic: require('../../assets/profileImages/leaderboard.jpg'),
         unread: false,
         lastMessage: {
             text: "Hey, it's me",
@@ -64,7 +64,7 @@ export const chatsData = [
     {
         id: 7,
         username: 'den1s',
-        profilePic: require('../../assets/profileImages/nataliya.png'),
+        profilePic: require('../../assets/profileImages/reality.jpg'),
         unread: false,
         lastMessage: {
             text: 'I should buy a boat',
@@ -74,7 +74,7 @@ export const chatsData = [
     {
         id: 8,
         username: 'Zywoo',
-        profilePic: require('../../assets/profileImages/antoni.png'),
+        profilePic: require('../../assets/profileImages/switch.jpg'),
         unread: false,
         lastMessage: {
             text: 'Look at my mukluks!',
@@ -84,7 +84,7 @@ export const chatsData = [
     {
         id: 9,
         username: 'electronic',
-        profilePic: require('../../assets/profileImages/nataliya.png'),
+        profilePic: require('../../assets/profileImages/controller.jpg'),
         unread: false,
         lastMessage: {
             text: 'This is wicked good ice cream.',
@@ -94,7 +94,7 @@ export const chatsData = [
     {
         id: 10,
         username: 'n0thing',
-        profilePic: require('../../assets/profileImages/andrea.png'),
+        profilePic: require('../../assets/profileImages/joystick.jpg'),
         unread: false,
         lastMessage: {
             text: 'Look at my mukluks!',
@@ -104,7 +104,7 @@ export const chatsData = [
     {
         id: 11,
         username: 'dev1ce',
-        profilePic: require('../../assets/profileImages/nataliya.png'),
+        profilePic: require('../../assets/profileImages/controller.jpg'),
         unread: false,
         lastMessage: {
             text: 'This is wicked good ice cream.',
@@ -114,7 +114,7 @@ export const chatsData = [
     {
         id: 12,
         username: 'kjaerbye',
-        profilePic: require('../../assets/profileImages/antoni.png'),
+        profilePic: require('../../assets/profileImages/leaderboard.jpg'),
         unread: false,
         lastMessage: {
             text: "Hey, it's me",
@@ -124,7 +124,7 @@ export const chatsData = [
     {
         id: 13,
         username: 'dupreeh',
-        profilePic: require('../../assets/profileImages/nataliya.png'),
+        profilePic: require('../../assets/profileImages/keyboard.jpg'),
         unread: false,
         lastMessage: {
             text: 'I should buy a boat',
@@ -134,7 +134,7 @@ export const chatsData = [
     {
         id: 14,
         username: 'gla1ve',
-        profilePic: require('../../assets/profileImages/antoni.png'),
+        profilePic: require('../../assets/profileImages/mess.jpg'),
         unread: false,
         lastMessage: {
             text: 'Look at my mukluks!',
@@ -144,7 +144,7 @@ export const chatsData = [
     {
         id: 15,
         username: 'xyp9x',
-        profilePic: require('../../assets/profileImages/nataliya.png'),
+        profilePic: require('../../assets/profileImages/joystick.jpg'),
         unread: false,
         lastMessage: {
             text: 'This is wicked good ice cream.',
