@@ -2,7 +2,7 @@
 
 ## To find documentation of our design process, click [here](https://github.com/and-rose/frogject/wiki) to view our dedicated WIKI page.
 
-### See a video demo of the project [here](https://drive.google.com/file/d/1HrEyQYrLG3gZ76dUMAzHwaMM4oeHb6Jt/view?usp=sharing)
+### To view a video demonstrating the final proof-of-concept prototype of our concept, click [here](https://drive.google.com/file/d/1HrEyQYrLG3gZ76dUMAzHwaMM4oeHb6Jt/view?usp=sharing)
 
 ## What is in this Repository?
 
